@@ -18,11 +18,13 @@
 	<br>
 	<div class="h1">// tech tutoring</div>
 	<div class="p">
-		Fumbling through the ever encompassing world of technology, compromises your overall autonomy. By guiding you through these complex systems and building out the mental structures needed to progress on your own. You'll be better equipped to handle whatever the future has in store!
+		Staying ignorant to the waves of technological advancement, compromises your autonomy. By guiding you through these complex systems and mental structures. You'll be empowered to take action.
 	</div>
 	<br>
 	<div class="p"><b>project based:</b><br>EXAMPLE > PERSONAL > PROFESSIONAL</div>
 	<div class="p"><b>autonomous:</b><br>engage with real world hurdles, not just school devised hoops</div>
+	<div class="p"><b>specialized in:</b><br>vr/ar, c#, crypto(web3), gamedev, ai, and more</div>
+	<div class="p"><b>all ages:</b><br>a confident yet humble interest is all you need to learn</div>
 	<br>
 	<br>
 	<div style="text-align: center;">
@@ -46,7 +48,9 @@
 	const dates = [{mm:11, dd:16, days:15}, {mm:12, dd:1, days:4}]
 
 	const res = []
+	var loaded = false;
 	function schedule(el) {
+		if (loaded) { return; }
 		// seperate schedule file?
 		res.push({mm:11, dd:17, hh:04, name:"gitika"})
 		res.push({mm:11, dd:19, hh:06, name:"jj"})
@@ -76,6 +80,7 @@
 			}
 		}
 		el.innerHTML = html
+		loaded = true
 	}
 	
 	var embed = new Twitch.Embed("twitch-embed", {
@@ -142,7 +147,8 @@ a {
 .btn {
 	margin: 1rem auto;
 	padding: 0.5rem;
-	min-width: 256px;
+	min-width: 200px;
+	max-width: 300px;
 	border: 1px solid white;
 	cursor: pointer;
 	text-align: center;
