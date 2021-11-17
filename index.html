@@ -1,0 +1,206 @@
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Code Tutoring</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://embed.twitch.tv/embed/v1.js"></script>
+</head>
+
+<body>
+	<div class="profile">
+		<div class="profile-back"><img class="profile-pic" src="profile-pic.png"></div>
+		<div class="profile-desc">
+			<div class="h2">Ethan Merchant</div>
+			<div class="p"><a href="https://twitter.org/spatialfree">@spatialfree</a></div>
+			<div class="p" style="margin-bottom: 0;"><a href="https://dofdev.org">dofdev</a> cofounder</div>
+		</div>
+	</div>
+	<br>
+	<br>
+	<div class="h1">// tech tutoring</div>
+	<div class="p">
+		Fumbling through the ever encompassing world of technology, compromises your overall autonomy. By guiding you through these complex systems and building out the mental structures needed to progress on your own. You'll be better equipped to handle whatever the future has in store!
+	</div>
+	<br>
+	<div class="p"><b>project based:</b><br>EXAMPLE > PERSONAL > PROFESSIONAL</div>
+	<div class="p"><b>autonomous:</b><br>engage with real world hurdles, not just school devised hoops</div>
+	<br>
+	<br>
+	<div style="text-align: center;">
+		4 | 5 | 6 pm EST (20$/hr)<br>
+		<a href="mailto:cadetmerchant@gmail.com"><div class="btn">reserve times</div></a>
+	</div>
+	<div id="schedule" onclick="schedule(this)"><div class="btn">calender</div></div>	
+	<br>
+
+	<br>
+	<br>
+	<div class="p">*sessions are streamed live for transparency and security</div>
+
+	<br>
+	<div class="vid" id="twitch-embed"></div>
+
+	<div id="footer">&copy; 2021 Ethan Merchant</div>
+</body>
+
+<script>
+	const dates = [{mm:11, dd:16, days:15}, {mm:12, dd:1, days:4}]
+
+	const res = []
+	function schedule(el) {
+		// seperate schedule file?
+		res.push({mm:11, dd:17, hh:04, name:"gitika"})
+		res.push({mm:11, dd:19, hh:06, name:"jj"})
+		res.push({mm:11, dd:22, hh:06, name:"shresta"})
+		res.push({mm:11, dd:24, hh:04, name:"gitika"})
+		res.push({mm:11, dd:26, hh:06, name:"jj"})
+		res.push({mm:11, dd:29, hh:04, name:"shresta"})
+		res.push({mm:12, dd:03, hh:06, name:"jj"})
+
+		let html = ""
+		for (let d of dates) {
+			for (let i = 0; i < d.days; i++) {
+				let day = d.dd + i
+				html += "<div class='day'>"
+				let fm = d.mm.toLocaleString("en-US", {minimumIntegerDigits: 2, useGrouping: false})
+				let fd = day.toLocaleString("en-US", {minimumIntegerDigits: 2, useGrouping: false})
+				html += "<div class='date'>" + fm + "/" + fd + "</div>"
+				html += "<div class='hours'>"
+				for (let r of res) {
+					if (d.mm == r.mm && day == r.dd) {
+						html += r.hh + "pm " + r.name
+						html += "<br>"
+					}
+				}
+				html += "</div>"
+				html += "</div>"
+			}
+		}
+		el.innerHTML = html
+	}
+	
+	var embed = new Twitch.Embed("twitch-embed", {
+		width: 854,
+		height: 480,
+		channel: "spatialfree",
+		layout: "video",
+		muted: false,
+		autoplay: false
+	})
+
+	embed.addEventListener(Twitch.Embed.VIDEO_READY, () => {
+		var player = embed.getPlayer()
+		player.play()
+	})
+</script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono&display=swap');
+:root {
+	--color: #009ac7;
+}
+body {
+	background-color: black;
+	color: white;
+	margin: 0 auto;
+	margin-top: 2rem;
+	max-width: 800px;
+}
+div {
+	font-family: 'DM Mono', monospace;
+}
+.h1, .h2, .p {
+	margin: 0 1rem;
+}
+.h1 {
+	font-size: 28px;
+	margin-bottom: 0.5rem;
+}
+.h2 {
+	font-size: 20px;
+}
+.p {
+	margin-bottom: 2rem;
+}
+a {
+	color: var(--color);
+	text-decoration: none;
+}
+.vid {
+	position: relative;
+	width: 100%;
+	height: 0;
+	padding-bottom: 56.25%;
+	margin-bottom: 2em;
+}
+.vid iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.btn {
+	margin: 1rem auto;
+	padding: 0.5rem;
+	min-width: 256px;
+	border: 1px solid white;
+	cursor: pointer;
+	text-align: center;
+	font-size: 20px;
+}
+.btn:hover {
+	border-color: var(--color);
+	transition: 0.1s;
+}
+.hook {
+	text-align: center;
+	margin: 0 auto;
+}
+.profile {
+	display: flex;
+	margin: 0 auto;
+	width: fit-content;
+	align-items: center;
+}
+.profile-back {
+	width: 164px;
+	height: 164px;
+	background-image: url('processing.webp');
+	background-size: cover;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.profile-pic {
+	width: 66.666%;
+	height: auto;
+	border-radius: 50%;
+	display: block
+}
+.profile-desc {
+	
+}
+#schedule {
+	display: flex;
+	flex-wrap: wrap;
+}
+.day {
+	flex-grow: 1;
+	margin: 0.25rem;
+	border: 1px solid;
+}
+.date {
+	padding: 0.25rem;
+	border-bottom: 1px solid #333;
+}
+.hours {
+	margin: 0.25rem;
+}
+#footer {
+	margin-bottom: 1rem;
+	margin-top: 6rem;
+	font-size: 13px;
+	text-align: center;
+	color: #808080;
+}
+</style>
