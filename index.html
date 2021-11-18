@@ -16,31 +16,35 @@
 			<div class="p" style="margin-bottom: 0;"><a href="https://dofdev.org">dofdev</a> cofounder</div>
 		</div>
 	</div>
-	<br>
-	<br>
+	<br><br>
 	<div class="h1">// tech tutoring</div>
 	<div class="p">
-		Staying ignorant to the waves of technological advancement, compromises your autonomy. By guiding you through these complex systems and mental structures. You'll be empowered to take action.
+		Getting tossed around by the waves of technological advancement, compromises your autonomy. By guiding you through these complex systems and mental structures. You can make informed decisions and capitalize on opportunities.
 	</div>
 	<br>
 	<div class="p"><b>project based:</b><br>EXAMPLE > PERSONAL > PROFESSIONAL</div>
 	<div class="p"><b>autonomous:</b><br>engage with real world hurdles, not just school devised hoops</div>
 	<div class="p"><b>specialized in:</b><br>vr/ar, c#, crypto(web3), gamedev, ai, and more</div>
 	<div class="p"><b>all ages:</b><br>a confident yet humble interest is all you need to learn</div>
+	<br><br>
 	<br>
+	<div id="calender"></div>
 	<br>
-	<div style="text-align: center;">
-		4 | 5 | 6 pm EST<br>
-		20$/hr<br>
-		*monthly invoice<br>
-		<a href="mailto:cadetmerchant@gmail.com"><div class="btn">contact</div></a>
-	</div>
-	<div id="schedule" onclick="schedule(this)"><div class="btn">calender</div></div>
-	<br>
-	<br>
-	<br>
+	<div style="text-align: center;">4 | 5 | 6 pm EST 20$/hr</div>
+	<form action="mailto:cadetmerchant@gmail.com" method="post" enctype="text/plain">
+		name<br>
+		<input type="text" name="name" placeholder="Johnny Appleseed"><br>
+		email<br>
+		<input type="text" name="email" placeholder="name@example.com"><br>
+		schedule<br>
+		<span style="color:#666; font-size:13px;">(day of week : hour EST : # of sessions)</span><br>
+		<input type="text" name="days" placeholder="monday:04:8"><br>
+		comment<br>
+		<input type="text" name="comment"><br><br>
+		<input type="submit" value="send">
+	</form>
+	<br><br><br>
 	<div class="p">*sessions are streamed live for transparency and security</div>
-
 	<br>
 	<div class="vid" id="twitch-embed"></div>
 
@@ -48,12 +52,14 @@
 </body>
 
 <script>
-	const dates = [{mm:11, dd:16, days:15}, {mm:12, dd:1, days:4}]
+	$(document).ready(function() {
+		schedule()
+	})
 
+	const dates = [{mm:11, dd:16, days:15}, {mm:12, dd:1, days:4}]
+	
 	const res = []
-	var loaded = false;
-	function schedule(el) {
-		if (loaded) { return; }
+	function schedule() {
 		// seperate schedule file?
 		res.push({mm:11, dd:17, hh:05, name:"gitika"})
 		res.push({mm:11, dd:19, hh:06, name:"jj"})
@@ -82,8 +88,7 @@
 				html += "</div>"
 			}
 		}
-		el.innerHTML = html
-		loaded = true
+		$('#calender').html(html)
 	}
 	
 	var embed = new Twitch.Embed("twitch-embed", {
@@ -132,6 +137,20 @@ div {
 a {
 	color: var(--color);
 	text-decoration: none;
+}
+form {
+	font-family: 'DM Mono', monospace;
+	margin: 0 1rem;
+}
+input {
+	margin-bottom: 1rem;
+	margin-top: 0.5rem;
+	background-color: black;
+	border: 1px solid white;
+	color: white;
+	font-size: 16px;
+	font-family: 'DM Mono', monospace;
+	padding: 0.5rem;
 }
 .vid {
 	position: relative;
@@ -189,7 +208,7 @@ a {
 .profile-desc {
 	
 }
-#schedule {
+#calender {
 	display: flex;
 	flex-wrap: wrap;
 }
