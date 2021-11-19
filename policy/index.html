@@ -1,0 +1,103 @@
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="written in psuedo code with interactable demo(s)">
+	<meta name="author" content="ethan merchant">
+	<title>policy</title>
+  <link rel="stylesheet" href="/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <br>
+  <div class="h1">policy</div>
+  <div class="p">written in psuedo code with interactable demo(s)</div>
+
+  
+  <pre>
+  // attendance streak system
+
+  Miss() {
+    streak = Min(0, streak - 1)
+    if (streak < 0) then sessions--
+  }
+
+  Show() {
+    streak = Max(1, streak + 1)
+    if (streak % 4 != 0) then sessions--
+  }
+  </pre>
+  <div id="stats"></div>
+  <div class="controls">
+    <div class="btn" onclick="miss()">miss</div>
+    <div class="btn" onclick="show()">show</div>
+    <div class="btn" onclick="reset()">reset</div>
+  </div>
+</body>
+
+<script>
+  $(document).ready(function() {
+    stats()
+	})
+
+  var sessions = 16
+  var streak = 0
+  function miss() {
+    if (sessions > 0) {
+      streak = Math.min(0, streak - 1)
+      if (streak < 0) sessions--
+      stats()
+    }
+  }
+  function show() {
+    if (sessions > 0) {
+      streak = Math.max(1, streak + 1)
+      if (streak % 4 != 0) sessions--
+      stats()
+    }
+  }
+  function reset() {
+    sessions = 16
+    streak = 0
+    stats()
+  }
+  function stats() {
+    var html = ""
+    html += `<div class="stats">`
+    html += `<div class="stat"><span class="value">${sessions}</span>sessions</div>`
+    html += `<div class="stat"><span class="value">${streak}</span>streak</div>`
+    html += `</div>`
+    $("#stats").html(html)
+  }
+</script>
+
+<style>
+.stats {
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: space-evenly;
+}
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.value {
+  font-size: 2em;
+}
+.controls {
+  display: flex;
+  /* width: 100%; */
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 1rem 0.5rem;
+}
+.controls .btn {
+  min-width: fit-content;
+  max-width: 100%;
+  font-size: 14px;
+  flex-grow: 1;
+  margin: 0 0.5rem;
+}
+</style>
