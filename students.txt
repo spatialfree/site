@@ -1,18 +1,56 @@
 _
 name:'jj
-day:5
-hour:6
 sessions:32
 streak:1
+times:[day:5 hour:5 [day:5 hour:6
+phone:12064038605
+email:mortslha@hotmail.com
 _
 name:'shresta
-day:1
-hour:4
-sessions:2
+sessions:0
 streak:0
+times:[day:1 hour:4
+phone:12486055850
+email:nivi_v@yahoo.com
+_
+name:'samshita
+sessions:0
+streak:0
+times:[day:3 hour:4
+phone:14842137329
+email:thummalauma@gmail.com
 _
 name:'gitika
-day:2
-hour:5
-sessions:1
+sessions:0
 streak:0
+times:[day:3 hour:5
+phone:19043124857
+email:ranganath14@gmail.com
+_
+name:'samanyu
+sessions:0
+streak:0
+times:[day:4 hour:4
+phone:17169036151
+email:srinivasvy@gmail.com
+_
+name:'eshaan
+sessions:0
+streak:0
+times:[day:4 hour:4
+phone:16142820489
+email:deepthireddy17@gmail.com
+_
+name:'gaurav
+sessions:0
+streak:0
+times:[day:4 hour:5
+phone:19044749495
+email:saripallikganesh@gmail.com
+_
+name:'praneel
+session:0
+streak:0
+times:[day:4 hour:6
+phone:18589995735
+email:sravanthikudumula@gmail.com

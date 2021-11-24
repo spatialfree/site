@@ -25,33 +25,39 @@
   <div class="p">example > personal > professional</div>
 
   <div class="h2">autonomous:</div>
-	<div class="p">engage with real world hurdles, not just school devised hoops</div>
+  <div class="p">guided by unique characteristics, skill level, and drive of each student</div>
+	<!-- <div class="p">engage with real world hurdles, not just school devised hoops</div> -->
 
   <div class="h2">specialized in:</div>
-	<div class="p">fullstack, vr/ar, c#, gamedev, crypto(web3), ai...</div>
+	<div class="p">fullstack dev, vr/ar, c#, gamedev, crypto(web3), ai, hardware...</div>
 
   <div class="h2">all ages:</div>
 	<div class="p">a confident yet humble interest is all you need to learn</div>
+
+  <div class="h2">trust:</div>
+  <div class="p">sessions are streamed live for transparency and security<br>*a virtual public study space</div>
 	<br><br><br>
+  <!-- <div class="btn" onclick="console.log('click through tutorial')">get started</div> -->
+  <div class="h1">form</div>
+  <div class="p">
+    1 select student (new or existing *from haedos)<br>
+    2 mark desired time(s) on calender<br>
+    3 fill out the rest as needed and submit
+  </div>
   <form action="https://api.staticforms.xyz/submit" method="post">
+    calender (EST time)<br>
     <div id="calender"></div><br>
     student: <select name="$student" id="student" onchange="studentSelect(this)"></select>
     <div id="new-student">
       name<br>
       <input type="text" name="name" placeholder="student name"><br>
-      email<br>
-      <input type="text" name="email" placeholder="name@example.com"><br>
       phone<br>
       <input type="text" name="phone" placeholder="(206)782-8410"><br>
+      email<br>
+      <input type="text" name="email" placeholder="name@example.com"><br>
     </div>
     <div id="current-student"></div>
-    + sessions: <select name="$sessions">
-      <option value="01">01 * $20/hr = $20</option>
-      <option value="04">04 * $19/hr = $76</option>
-      <option value="08">08 * $18/hr = $144</option>
-      <option value="16">16 * $17/hr = $272</option>
-      <option value="32">32 * $16/hr = $512</option>
-    </select><br>
+    + sessions: <select name="$sessions" id="sessions"></select><br>
     notes<br>
     <textarea name="message" rows="4"></textarea><br>
     <a href="/policy" target="_blank">attendance policy</a><br><br>
@@ -62,8 +68,6 @@
     <input type="submit" value="submit" />
   </form>
 	<br><br><br>
-	<div class="p">*sessions are streamed live for transparency and security</div>
-	<br>
 	<div class="vid" id="twitch-embed"></div>
 
 	<div id="footer">&copy; 2021 ethan merchant</div>
@@ -75,32 +79,36 @@
   // seperate file?
 	const students = [
     { name:"jj", 
-      sessions:32, streak:1, 
+      sessions:32, streak:4, 
       times:[{day:5, hour:5}, {day:5, hour:6}]
     },
     { name:"shresta", 
-      sessions:02, streak:0, 
-      times:[{day:1, hour:4}]
+      sessions:1, streak:0, 
+      times:[]
     },
     { name:"samshita",
-      sessions:00, streak:0,
-      times:[{day:3, hour:4}]
+      sessions:1, streak:0,
+      times:[]
     },
     { name:"gitika", 
-      sessions:01, streak:0, 
-      times:[{day:3, hour:5}]
+      sessions:1, streak:0, 
+      times:[]
     },
     { name:"samanyu",
-      sessions:01, streak:0,
-      times:[{day:4, hour:4}]
+      sessions:1, streak:0,
+      times:[]
+    },
+    { name:"eshaan",
+      sessions:1, streak:0,
+      times:[]
     },
     { name:"gaurav",
-      sessions:01, streak:0,
-      times:[{day:4, hour:5}]
+      sessions:1, streak:0,
+      times:[]
     },
     { name:"praneel",
-      sessions:01, streak:0,
-      times:[{day:4, hour:6}]
+      sessions:1, streak:0,
+      times:[]
     },
   ]
 
@@ -119,8 +127,16 @@
   function studentSelect(el) {
     student = el.value;
     let html = ""
+    let sessions = `
+      <option value="01">01 * $20/hr = $20</option>
+      <option value="04">04 * $19/hr = $76</option>
+      <option value="08">08 * $18/hr = $144</option>
+      <option value="16">16 * $17/hr = $272</option>
+      <option value="32">32 * $16/hr = $512</option>
+    `
     if (student == "new") {
       $("#new-student").show()
+      
     } else {
       $("#new-student").hide()
       for (s of students) {
@@ -129,8 +145,10 @@
           html += `attendance streak: ${s.streak}<br><br>`
         }
       }
+      sessions = `<option value="00">use remaining</option>` + sessions
     }
     $("#current-student").html(html)
+    $("#sessions").html(sessions)
     calender()
   }
 

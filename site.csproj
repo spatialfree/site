@@ -5,4 +5,8 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Twilio" Version="5.68.1" />
+  </ItemGroup>
+
 </Project>

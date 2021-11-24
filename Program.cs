@@ -1,27 +1,44 @@
 ﻿using System;
 using System.IO;
+using Twilio;
+using System.Net.Mail;
+using Twilio.Rest.Api.V2010.Account;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Runtime.Serialization;
 
 
-// [{DAY, HOUR}, {DAY, HOUR}]
+string accountSid = Environment.GetEnvironmentVariable("AC65e8eb193a0f8a37dda5bfeaf7555cbd");
+string authToken = Environment.GetEnvironmentVariable("ad86263d584e9e385926c3b96e9ed3b2");
 
-// [student v]
+TwilioClient.Init(accountSid, authToken);
 
-// Sunday
-// 4|5|6
-// Monday
-// 4|5|6
-// Tuesday
-// 4|5|6
-// Wednesday
-// 4|5|6
-// Thursday
-// 4|5|6
-// Friday
-// 4|5|6
-// Saturday
-// 4|5|6
+var msg = MessageResource.Create(
+  body: "This is the ship that made the Kessel Run in fourteen parsecs?",
+  from: new Twilio.Types.PhoneNumber("+15097015021"),
+  to: new Twilio.Types.PhoneNumber("+15097015021")
+);
+
+Console.WriteLine(msg.Sid);
+
+
+
+
+
+
+void EmailSMS() {
+  var message = new MailMessage();
+  message.From = new MailAddress("cadetmerchant@gmail.com");
+  message.To.Add(new MailAddress("5097015021@txt.att.net"));
+  message.Subject = "Test";
+  message.Body = "This is a test";
+  var client = new SmtpClient("smtp.gmail.com", 587);
+  client.UseDefaultCredentials = false;
+  client.EnableSsl = true;
+  client.Credentials = new System.Net.NetworkCredential("cadetmerchant@gmail.com", "kklrwgpbqlxjrolb");
+  client.Send(message);
+}
+
+
 
 string txt = File.ReadAllText("students.txt");
 Student[] students = new Student[64];
