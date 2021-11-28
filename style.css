@@ -8,20 +8,21 @@ body {
 	margin: 0 auto;
 	max-width: 800px;
 }
-div, pre {
+div, pre, h1, h2, p {
 	font-family: 'DM Mono', monospace;
 }
-.h1, .h2, .p {
+h1, h2, p {
 	margin: 0 1rem;
+  font-weight: normal;
 }
-.h1 {
+h1 {
 	font-size: 28px;
 	margin-bottom: 0.5rem;
 }
-.h2 {
+h2 {
 	font-size: 20px;
 }
-.p {
+p {
 	margin-bottom: 2rem;
 }
 pre {
@@ -127,7 +128,7 @@ textarea {
 .profile-back {
 	width: 164px;
 	height: 164px;
-	background-image: url('processing.webp');
+	background-image: url('/res/processing.webp');
 	background-size: cover;
 	display: flex;
 	align-items: center;
