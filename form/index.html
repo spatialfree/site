@@ -1,0 +1,160 @@
+<head>
+  <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/favicon/site.webmanifest">
+	<meta name="description" content="">
+	<meta name="author" content="ethan merchant">
+	<title>form | tech tutoring</title>
+  <link rel="stylesheet" href="/style.css?v1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <br>
+  <div style="text-align: center; width: 100%;"><a href="/">back</a></div>
+	<br><br>
+	<h1>// form</h1>
+  <ol>
+    <li>select student (new or pre-existing *from haedos)</li>
+    <li>mark desired time(s) on calender</li>
+    <li>fill out the rest as needed and submit</li>
+  </ol>
+  <form action="https://api.staticforms.xyz/submit" method="post">
+    student: <select name="$student" id="student" onchange="studentSelect(this)"></select><br><br>
+    calender (EST time)<br>
+    <div id="calender"></div><br>
+    <div id="new-student">
+      name<br>
+      <input type="text" name="name" placeholder="student name"><br>
+      phone<br>
+      <input type="text" name="phone" placeholder="(206)782-8410"><br>
+      email<br>
+      <input type="text" name="email" placeholder="name@example.com"><br>
+    </div>
+    <div id="current-student"></div>
+    + sessions: <select name="$sessions" id="sessions"></select><br>
+    notes<br>
+    <textarea name="message" rows="4"></textarea><br>
+    <a href="/policy" target="_blank">attendance policy</a><br><br>
+    <input type="hidden" name="accessKey" value="8185dd6e-7902-46f0-9c2e-edf845220b3e">
+    <input type="hidden" name="replyTo" value="@">
+    <input type="text" name="honeypot" style="display: none;">
+    <input type="hidden" name="redirectTo" value="https://ethanmerchant.com/ty">
+    <input type="submit" value="submit" />
+  </form>
+  <br><br>
+	<div id="footer">&copy; 2021 ethan merchant</div>
+</body>
+
+<script>
+  const dotw = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']
+	
+	const students = [
+    { name:"jj", 
+      sessions:32, streak:6, 
+      times:[{day:5, hour:5}, {day:5, hour:6}]
+    },
+    { name:"shresta", 
+      sessions:1, streak:0, 
+      times:[]
+    },
+    { name:"samshita",
+      sessions:1, streak:0,
+      times:[]
+    },
+    { name:"gitika", 
+      sessions:1, streak:0, 
+      times:[]
+    },
+    { name:"samanyu",
+      sessions:1, streak:0,
+      times:[]
+    },
+    { name:"eshaan",
+      sessions:1, streak:0,
+      times:[]
+    },
+    { name:"gaurav",
+      sessions:1, streak:0,
+      times:[]
+    },
+    { name:"praneel",
+      sessions:1, streak:0,
+      times:[]
+    },
+  ]
+
+	$(document).ready(function() {
+    let html = ""
+    html += `<option value="new">new</option>`
+    for (let i = 0; i < students.length; i++) {
+      html += `<option value="${students[i].name}">${students[i].name}</option>`
+    }
+    $("#student").html(html)
+
+    studentSelect(document.getElementById("student"))
+	})
+
+  var student
+  function studentSelect(el) {
+    student = el.value;
+    let html = ""
+    let sessions = `
+      <option value="01">01 * $20/hr = $20</option>
+      <option value="04">04 * $19/hr = $76</option>
+      <option value="08">08 * $18/hr = $144</option>
+      <option value="16">16 * $17/hr = $272</option>
+      <option value="32">32 * $16/hr = $512</option>
+    `
+    if (student == "new") {
+      $("#new-student").show()
+      
+    } else {
+      $("#new-student").hide()
+      for (s of students) {
+        if (s.name == student) {
+          html += `sessions remaining: ${s.sessions}<br>`
+          html += `attendance streak: ${s.streak}<br><br>`
+        }
+      }
+      sessions = `<option value="00">use remaining</option>` + sessions
+    }
+    $("#current-student").html(html)
+    $("#sessions").html(sessions)
+    calender()
+  }
+
+	function calender() {
+		let html = ""
+    for (let i = 0; i < dotw.length; i++) {
+      html += `<div class="day">`
+      html += `<div class="date">&nbsp;${dotw[i]}</div>`
+      html += `<div class="hours">`
+      html += `<label class="check">4<input type="checkbox" ${status(i, 4)} name="$${dotw[i]+4}"><span class="checkmark"></span></label>`
+      html += `<label class="check">5<input type="checkbox" ${status(i, 5)} name="$${dotw[i]+5}"><span class="checkmark"></span></label>`
+      html += `<label class="check">6<input type="checkbox" ${status(i, 6)} name="$${dotw[i]+6}"><span class="checkmark"></span></label>`
+      html += `</div>`
+      html += `</div>`
+    }
+    
+		$('#calender').html(html)
+	}
+
+  function status(day, hour) {
+    for (let i = 0; i < students.length; i++) {
+      for (let j = 0; j < students[i].times.length; j++) {
+        if (students[i].times[j].day == day && students[i].times[j].hour == hour) {
+          if (students[i].name == student) {
+            return "checked"
+          } else {
+            return "disabled"
+          }
+        }
+      }
+    }
+    return "";
+  }
+</script>

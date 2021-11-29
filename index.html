@@ -8,7 +8,7 @@
 	<meta name="description" content="Learn how to navigate the waves of technological advancement, with specialized one on one tutoring.">
 	<meta name="author" content="ethan merchant">
 	<title>tech tutoring</title>
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/style.css?v1">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://embed.twitch.tv/embed/v1.js"></script>
 </head>
@@ -17,184 +17,49 @@
 	<div class="profile">
 		<div class="profile-back"><img class="profile-pic" src="/res/profile-pic.png"></div>
 		<div class="profile-desc">
-			<h2>ethan merchant</h2>
-			<p><a href="https://spatialfree.itch.io/">@spatialfree</a></p>
-			<p style="margin-bottom: 0;">
+			<div style="font-size: 1.3rem;">ethan merchant</div>
+			<div><a href="https://spatialfree.itch.io/">@spatialfree</a></div>
+      <br>
+			<div style="margin-bottom: 0;">
         <a href="https://dofdev.org"><img src="/res/dofdev-icon.png" width="32px" /></a>
         &nbsp;
         <a href="https://github.com/spatialfree"><img src="/res/github-icon.png" width="32px" /></a>
         &nbsp;
         <a href="https://twitter.com/spatialfree"><img src="/res/twitter-icon.png" width="32px" /></a>
-      </p>
+      </div>
 		</div>
 	</div>
 	<br>
 	<h1>// tech tutoring</h1>
 	<p>learn how to navigate the waves of technological advancement, with specialized one on one tutoring.</p>
 
-  <h2>project based:</h2>
+  <h2>project based</h2>
   <p>example > personal > professional</p>
 
-  <h2>autonomous:</h2>
-  <p>guided by the unique characteristics, skill level, and drive of each student</p>
+  <h2>autonomous</h2>
+  <p>tailored to the unique traits of each student</p>
 
-  <h2>specialized in:</h2>
+  <h2>specialized in</h2>
 	<p>fullstack dev, vr/ar, c#, gamedev, crypto(web3), ai, hardware...</p>
 
-  <h2>all ages:</h2>
+  <h2>all ages</h2>
 	<p>a confident yet humble interest is all you need to learn</p>
-
-  <h2>trust:</h2>
-  <p>sessions are streamed live for transparency and security<br>*a virtual public study space</p>
-	<br><br><br>
-  <!-- <div class="btn" onclick="console.log('click through tutorial')">get started</div> -->
-  <h2>student form:</h2>
-  <p>
-    1 select student (new or pre-existing *from haedos)<br>
-    2 mark desired time(s) on calender<br>
-    3 fill out the rest as needed and submit
-  </p>
-  <form action="https://api.staticforms.xyz/submit" method="post">
-    calender (EST time)<br>
-    <div id="calender"></div><br>
-    student: <select name="$student" id="student" onchange="studentSelect(this)"></select>
-    <div id="new-student">
-      name<br>
-      <input type="text" name="name" placeholder="student name"><br>
-      phone<br>
-      <input type="text" name="phone" placeholder="(206)782-8410"><br>
-      email<br>
-      <input type="text" name="email" placeholder="name@example.com"><br>
-    </div>
-    <div id="current-student"></div>
-    + sessions: <select name="$sessions" id="sessions"></select><br>
-    notes<br>
-    <textarea name="message" rows="4"></textarea><br>
-    <a href="/policy" target="_blank">attendance policy</a><br><br>
-    <input type="hidden" name="accessKey" value="8185dd6e-7902-46f0-9c2e-edf845220b3e">
-    <input type="hidden" name="replyTo" value="@">
-    <input type="text" name="honeypot" style="display: none;">
-    <input type="hidden" name="redirectTo" value="https://ethanmerchant.com/ty">
-    <input type="submit" value="submit" />
-  </form>
+  <a href="/form"><div class="btn">enroll / update</div></a>
+  <br><br>
+  <h2>trust</h2>
+  <p>sessions are streamed live for transparency and security *like a virtual public study space</p>
+  <div class="vid" id="twitch-embed"></div>
   <br>
-  <h2>background:</h2>
-  <p>ive experienced a wide variety of schools. from public to private with the occasional lucky home school year, half built early online systems, even international. not to mention plenty of exotic extracurriculars. i remember starting out as a ruthless self driven learner, always maxing out my local libraries borrow limit. but the common flaws of these education systems eventually wore on me. graduating with the last bit of my momentum, i drifted for a couple years until i came to a stop. <br><br>reflecting on my core strengths and passions with the little i had access to i re-approached software development. kicking things off with gamedev, i found some online courses. the progress was slow impersonal and half arbitrary. one day i happened upon game jams. with their unique time and theme constraints, backed with community support. i had the environment i needed to begin to rebuild my self driven nature. <br><br>4 years later through iteration and hardship, ive built several companies and more importantly the core mental structures needed to make my own way through our technological world. with this perspective i'd be remiss to not pass on these systems that continue to be so life changing for me.</p>
+  <h2>background</h2>
+  <p>ive experienced a wide variety of schools. from public to private with the occasional lucky home school year, half built early online systems, even international. not to mention plenty of exotic extracurriculars. i remember starting out as a ruthless self driven learner, always maxing out my local libraries borrow limit. but the common flaws of these education systems eventually wore on me. graduating with the last bit of my momentum, i drifted for a couple years until i came to a stop.</p>
+  <p>reflecting on my core strengths and passions with the little i had access to i re-approached software development. kicking things off with gamedev, i found some online courses. the progress was slow impersonal and half arbitrary. one day i happened upon game jams. with their unique time and theme constraints, backed with community support. i had the environment i needed to begin to rebuild my self driven nature.</p>
+  <p>4 years later through iteration and hardship, ive built several companies and more importantly the core mental structures needed to make my own way through our technological world. with this perspective i'd be remiss to not pass on these systems that continue to be so life changing for me.</p>
 	<br><br><br>
-	<div class="vid" id="twitch-embed"></div>
+	
 	<div id="footer">&copy; 2021 ethan merchant</div>
 </body>
 
-<script>
-  const dotw = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']
-	
-  // seperate file?
-	const students = [
-    { name:"jj", 
-      sessions:32, streak:4, 
-      times:[{day:5, hour:5}, {day:5, hour:6}]
-    },
-    { name:"shresta", 
-      sessions:1, streak:0, 
-      times:[]
-    },
-    { name:"samshita",
-      sessions:1, streak:0,
-      times:[]
-    },
-    { name:"gitika", 
-      sessions:1, streak:0, 
-      times:[]
-    },
-    { name:"samanyu",
-      sessions:1, streak:0,
-      times:[]
-    },
-    { name:"eshaan",
-      sessions:1, streak:0,
-      times:[]
-    },
-    { name:"gaurav",
-      sessions:1, streak:0,
-      times:[]
-    },
-    { name:"praneel",
-      sessions:1, streak:0,
-      times:[]
-    },
-  ]
-
-	$(document).ready(function() {
-    let html = ""
-    html += `<option value="new">new</option>`
-    for (let i = 0; i < students.length; i++) {
-      html += `<option value="${students[i].name}">${students[i].name}</option>`
-    }
-    $("#student").html(html)
-
-    studentSelect(document.getElementById("student"))
-	})
-
-  var student
-  function studentSelect(el) {
-    student = el.value;
-    let html = ""
-    let sessions = `
-      <option value="01">01 * $20/hr = $20</option>
-      <option value="04">04 * $19/hr = $76</option>
-      <option value="08">08 * $18/hr = $144</option>
-      <option value="16">16 * $17/hr = $272</option>
-      <option value="32">32 * $16/hr = $512</option>
-    `
-    if (student == "new") {
-      $("#new-student").show()
-      
-    } else {
-      $("#new-student").hide()
-      for (s of students) {
-        if (s.name == student) {
-          html += `sessions remaining: ${s.sessions}<br>`
-          html += `attendance streak: ${s.streak}<br><br>`
-        }
-      }
-      sessions = `<option value="00">use remaining</option>` + sessions
-    }
-    $("#current-student").html(html)
-    $("#sessions").html(sessions)
-    calender()
-  }
-
-	function calender() {
-		let html = ""
-    for (let i = 0; i < dotw.length; i++) {
-      html += `<div class="day">`
-      html += `<div class="date">&nbsp;${dotw[i]}</div>`
-      html += `<div class="hours">`
-      html += `<label class="check">4<input type="checkbox" ${status(i, 4)} name="$${dotw[i]+4}"><span class="checkmark"></span></label>`
-      html += `<label class="check">5<input type="checkbox" ${status(i, 5)} name="$${dotw[i]+5}"><span class="checkmark"></span></label>`
-      html += `<label class="check">6<input type="checkbox" ${status(i, 6)} name="$${dotw[i]+6}"><span class="checkmark"></span></label>`
-      html += `</div>`
-      html += `</div>`
-    }
-    
-		$('#calender').html(html)
-	}
-
-  function status(day, hour) {
-    for (let i = 0; i < students.length; i++) {
-      for (let j = 0; j < students[i].times.length; j++) {
-        if (students[i].times[j].day == day && students[i].times[j].hour == hour) {
-          if (students[i].name == student) {
-            return "checked"
-          } else {
-            return "disabled"
-          }
-        }
-      }
-    }
-    return "";
-  }
-	
+<script>	
 	var embed = new Twitch.Embed("twitch-embed", {
 		width: 854,
 		height: 480,
