@@ -16,16 +16,25 @@ h1, h2, p {
   font-weight: normal;
 }
 h1 {
-	font-size: 28px;
+	font-size: 32px;
 	margin-bottom: 0.5rem;
 }
 h2 {
-	font-size: 20px;
+	font-size: 24px;
   margin-bottom: 0.25rem;
+  color: #eee;
 }
 p {
 	margin-bottom: 2rem;
-  text-indent: 2ch;
+  line-height: 1.75;
+  text-indent: 4ch;
+  color: #ccc;
+}
+.no-indent {
+  text-indent: 0;
+}
+div {
+  color: #ccc;
 }
 pre {
   font-size: 14px;
@@ -37,6 +46,7 @@ a {
 }
 ul, ol {
   font-family: 'DM Mono', monospace;
+  color: #ccc;
 }
 li {
   margin-bottom: 0.5rem;
@@ -44,13 +54,14 @@ li {
 form {
 	font-family: 'DM Mono', monospace;
 	margin: 0 1rem;
+  color: #ccc;
 }
 input, select, textarea {
 	margin-bottom: 1rem;
 	margin-top: 0.5rem;
 	background-color: black;
-	border: 1px solid white;
-	color: white;
+	border: 1px solid #ccc;
+	color: #ccc;
 	font-size: 16px;
 	font-family: 'DM Mono', monospace;
 	padding: 0.5rem;
@@ -150,9 +161,35 @@ textarea {
 	border-radius: 50%;
 	display: block
 }
-/* .profile-desc {
-	
-} */
+.threes {
+  /* margin: 0 auto; */
+  width: 400px;
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ddd;
+  /* justify-content: space-between; */
+}
+.third {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: normal;
+  height: 32px;
+  flex-grow: 1;
+  margin: 0 0.5rem;
+  margin-bottom: 0.5rem;
+  line-height: 3rem;
+}
+.thabel {
+  /* position: absolute; */
+  text-align: center;
+  color: #ccc;
+}
+.svg-inline {
+  height: 100%;
+}
 #calender {
 	display: flex;
 	flex-wrap: wrap;
@@ -180,7 +217,22 @@ textarea {
 }
 
 @media screen and (max-width: 800px) {
-  p {
-    text-indent: 0;
+  h1 {
+    font-size: 28px;
   }
+  h2 {
+    font-size: 20px;
+  }
+  p {
+    text-indent: 2ch;
+    line-height: 1.5;
+  }
+  .threes {
+    font-size: 1.5rem;
+  }
+  .third {
+    height: 32px;
+    margin: 0 0.5rem;
+    font-size: 16px;
+  } 
 }
