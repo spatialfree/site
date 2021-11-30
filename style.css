@@ -37,8 +37,10 @@ div {
   color: #ccc;
 }
 pre {
+  padding-top: 1rem;
   font-size: 14px;
-  color: cyan;
+  color: black;
+  background-color: white;
 }
 a {
 	color: var(--color);
