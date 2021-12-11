@@ -7,6 +7,13 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Runtime.Serialization;
 
 
+
+
+
+
+return;
+
+
 string accountSid = Environment.GetEnvironmentVariable("AC65e8eb193a0f8a37dda5bfeaf7555cbd");
 string authToken = Environment.GetEnvironmentVariable("ad86263d584e9e385926c3b96e9ed3b2");
 
@@ -19,7 +26,6 @@ var msg = MessageResource.Create(
 );
 
 Console.WriteLine(msg.Sid);
-
 
 
 

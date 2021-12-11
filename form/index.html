@@ -9,13 +9,14 @@
 	<meta name="description" content="">
 	<meta name="author" content="ethan merchant">
 	<title>form | tech tutoring</title>
-  <link rel="stylesheet" href="/style.css?v3">
+  <link rel="stylesheet" href="/style.css?v4">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="/include/includer.js?v4"></script>
 </head>
 
 <body>
   <br>
-  <div style="text-align: center; width: 100%;"><a href="/">back</a></div>
+  <div style="text-align: center; width: 100%;"><a href="/tutoring">back</a></div>
 	<br><br>
 	<h1>// form</h1>
   <ol>
@@ -37,6 +38,7 @@
     </div>
     <div id="current-student"></div>
     + sessions: <select name="$sessions" id="sessions"></select><br>
+    <span style="font-style: italic;">*payments are invoiced</span><br><br><br>
     notes<br>
     <textarea name="message" rows="4"></textarea><br>
     <a href="/policy" target="_blank">attendance policy</a><br><br>
@@ -47,7 +49,7 @@
     <input type="submit" value="submit" />
   </form>
   <br><br>
-	<div id="footer">&copy; 2021 ethan merchant</div>
+  <div id="footer"></div>
 </body>
 
 <script>
