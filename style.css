@@ -32,7 +32,7 @@ h3 {
 p {
 	margin-bottom: 2rem;
   line-height: 1.75;
-  text-indent: 4ch;
+  /* text-indent: 2ch; */
   color: #ccc;
 }
 .no-indent {
@@ -150,6 +150,29 @@ textarea {
 	text-align: center;
 	margin: 0 auto;
 }
+.panel {
+  border-bottom: 2px solid gray;
+  /* background-color: var(--color); */
+  /* border-radius: 2rem; */
+  /* padding: 1rem 0;  */
+}
+.panel:hover {
+  box-shadow: inset 0 0 1rem 0rem var(--color);
+  transition: 0.1s;
+}
+.panel-img {
+  height: 256px; 
+  margin-bottom: -2rem; 
+  background-size: cover;
+  background-position: center;
+  mix-blend-mode: screen;
+}
+.spacer {
+  width: 4px;
+  height: auto;
+  margin: 0.75rem 0.5rem;
+  background-color: rgb(27, 27, 27);
+}
 .profile {
 	display: flex;
 	margin: 0 auto;
@@ -241,7 +264,7 @@ textarea {
     font-size: 20px;
   }
   p {
-    text-indent: 2ch;
+    /* text-indent: 2ch; */
     line-height: 1.5;
   }
   .threes {
@@ -255,5 +278,8 @@ textarea {
   } 
   .row2column {
     flex-flow: column;
+  }
+  .spacer {
+    display: none;
   }
 }
