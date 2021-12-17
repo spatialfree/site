@@ -115,6 +115,16 @@ input, select, textarea {
 textarea {
   width: 100%;
 }
+.home {
+  /* nav += `<img src="/favicon/favicon-32x32.png" width="32px" style="margin: 1rem">` */
+  background-image: url('/res/cube.gif');
+  background-size: 500%;
+  background-position: center;
+  width: 64px;
+  height: 64px;
+  mix-blend-mode: screen;
+  /* margin: 1rem; */
+}
 .vid {
 	position: relative;
 	width: 100%;
