@@ -8,41 +8,37 @@ using System.Runtime.Serialization;
 
 
 
-
-
-
 return;
 
+// string accountSid = Environment.GetEnvironmentVariable("AC65e8eb193a0f8a37dda5bfeaf7555cbd");
+// string authToken = Environment.GetEnvironmentVariable("ad86263d584e9e385926c3b96e9ed3b2");
 
-string accountSid = Environment.GetEnvironmentVariable("AC65e8eb193a0f8a37dda5bfeaf7555cbd");
-string authToken = Environment.GetEnvironmentVariable("ad86263d584e9e385926c3b96e9ed3b2");
+// TwilioClient.Init(accountSid, authToken);
 
-TwilioClient.Init(accountSid, authToken);
+// var msg = MessageResource.Create(
+//   body: "This is the ship that made the Kessel Run in fourteen parsecs?",
+//   from: new Twilio.Types.PhoneNumber("+15097015021"),
+//   to: new Twilio.Types.PhoneNumber("+15097015021")
+// );
 
-var msg = MessageResource.Create(
-  body: "This is the ship that made the Kessel Run in fourteen parsecs?",
-  from: new Twilio.Types.PhoneNumber("+15097015021"),
-  to: new Twilio.Types.PhoneNumber("+15097015021")
-);
-
-Console.WriteLine(msg.Sid);
-
+// Console.WriteLine(msg.Sid);
 
 
 
 
-void EmailSMS() {
-  var message = new MailMessage();
-  message.From = new MailAddress("cadetmerchant@gmail.com");
-  message.To.Add(new MailAddress("5097015021@txt.att.net"));
-  message.Subject = "Test";
-  message.Body = "This is a test";
-  var client = new SmtpClient("smtp.gmail.com", 587);
-  client.UseDefaultCredentials = false;
-  client.EnableSsl = true;
-  client.Credentials = new System.Net.NetworkCredential("cadetmerchant@gmail.com", "kklrwgpbqlxjrolb");
-  client.Send(message);
-}
+
+// void EmailSMS() {
+//   var message = new MailMessage();
+//   message.From = new MailAddress("cadetmerchant@gmail.com");
+//   message.To.Add(new MailAddress("5097015021@txt.att.net"));
+//   message.Subject = "Test";
+//   message.Body = "This is a test";
+//   var client = new SmtpClient("smtp.gmail.com", 587);
+//   client.UseDefaultCredentials = false;
+//   client.EnableSsl = true;
+//   client.Credentials = new System.Net.NetworkCredential("cadetmerchant@gmail.com", "kklrwgpbqlxjrolb");
+//   client.Send(message);
+// }
 
 
 
