@@ -177,6 +177,11 @@ textarea {
   background-position: center;
   mix-blend-mode: screen;
 }
+.banner {
+  height: 256px;
+  background-size: cover;
+  background-position: center;
+}
 .spacer {
   width: 4px;
   height: auto;
