@@ -12,4 +12,45 @@ $(document).ready(function () {
 
   $('#nav').html(nav);
   $('#footer').html('<sub>&copy; 2021 ethan merchant</sub>');
+  $('.project-vid').each(function () {
+    $(this).on('loadeddata', function() {
+      var duration = $(this).prop('duration')
+      var t = Math.random() * duration
+      $(this).prop('currentTime', t)
+    })
+  })
+
+  $('.project-vid').trigger('pause')
+  // $('.project-vid').mouseenter(function() {
+  //   // console.log('mouseenter')
+  //   $(this).trigger('play')
+  //   // position
+  //   console.log($(this).offset())
+  //   // scroll pos
+  //   console.log($(window).scrollTop())
+
+
+  // }).mouseleave(function () {
+  //   // console.log('mouseleave')
+  //   $(this).trigger('pause')
+  
+  //   // $(this).prop('volume', 0)
+  //   // $(this).css('border', 'none')
+  // })
+
+  // on scroll
+  $(window).scroll(function () { 
+    // viewport height
+    let scrollPos = $(window).scrollTop() + (window.innerHeight / 2)
+    $('#scroller').css('top', scrollPos + 'px')
+    $('.project-vid').each(function () {
+      $(this).trigger('pause')
+      $(this).next().css('box-shadow', 'inset 0px 0px 0px 4px #cccccc00')
+      
+      if (scrollPos > $(this).offset().top && scrollPos < $(this).offset().top + $(this).height()) {
+        $(this).trigger('play')
+        $(this).next().css('box-shadow', 'inset 0px 0px 0px 4px #ccc')
+      }
+    })
+  })
 })
