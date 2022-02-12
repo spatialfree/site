@@ -7,47 +7,70 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
   <link rel="manifest" href="/favicon/site.webmanifest">
   <meta name="google-site-verification" content="Y2L2N0qVuZgQpm0jJTr9D9NtEVMKiOJikO1x8GJaMD8" />
-	<meta name="description" content="A central hub for my all my work, ideas, and services.">
+	<meta name="description" content="third generation software developer and tech optimist. this site is a central hub for my all my work, ideas and services:">
 	<meta name="author" content="ethan merchant">
 	<title>ethan merchant</title>
-  <link rel="stylesheet" href="/style.css?v6">
+  <link rel="stylesheet" href="/style.css?v7">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="/include/includer.js?v6"></script>
+  <script src="/include/includer.js?v7"></script>
 	<script src="https://embed.twitch.tv/embed/v1.js"></script>
 </head>
 
 <body>
-	<div class="profile">
-		<div class="profile-back"><img class="profile-pic" src="/res/profile-pic.png"></div>
-		<div class="profile-desc">
-			<div style="color: white;">ethan merchant</div>
-			<div><a href="https://spatialfree.itch.io/" title="itch.io" style="color: black;">@spatialfree</a></div>
-      <br>
-			<div style="margin-bottom: 0; font-size: 12px;">
-        <a href="https://dofdev.org" title="dofdev"><img src="/res/dofdev-icon.png" width="32px" /></a>
-        &nbsp;
-        <a href="https://github.com/spatialfree" title="github"><img src="/res/github-icon.png" width="32px" /></a>
-        &nbsp;
-        <a href="https://twitter.com/spatialfree" title="twitter"><img src="/res/twitter-icon.png" width="32px" /></a>
-        &nbsp;
-        <a href="https://spatialfree.itch.io/" title="twitter"><img src="/res/itchio-textless-black.svg" width="32px" /></a>
-      </div>
-		</div>
-	</div>
-	<br>
+  <img class="profile-pic" src="/res/profile-pic.png">
+  <div class="stripe"></div>
   <h1>ethan merchant</h1>
-  <p>a central hub for my all my work, ideas, and services:</p>
+  <p>third generation software developer and tech optimist. this site is a central hub for my all my work, ideas and services:</p>
+  <br>
+  <div style="margin: 1rem;">
+    <a href="https://dofdev.org" target="blank" title="dofdev" class="link">
+      <div class="row"><img src="/res/dofdev-icon.svg" width="48px" /><div>dofdev</div></div>
+      <div class="link-desc">co-founded spatial interaction open src project</div>
+    </a>
+    <a href="/tutoring" title="tutoring" class="link">
+      <div class="row"><img src="/res/tutoring-icon.svg" width="48px" /><div>tutoring</div></div>
+      <div class="link-desc">tech focused with an emphasis on autonomy</div>
+    </a>
+    <a href="https://github.com/spatialfree" target="blank" title="github" class="link">
+      <div class="row"><img src="/res/github-icon.svg" width="48px" /><div>github</div></div>
+      <div class="link-desc">public and private codebases</div>
+    </a>
+    <a href="https://spatialfree.itch.io/" target="blank" title="itchio" class="link">
+      <div class="row"><img src="/res/itchio-icon.svg" width="48px" /><div>itch.io</div></div>
+      <div class="link-desc">14+ game jams</div>
+    </a>
+    <a href="https://scratch.mit.edu/users/ethanwm/" target="blank" title="scratch" class="link">
+      <div class="row"><img src="/res/scratch-icon.svg" width="48px" /><div>scratch</div></div>
+      <div class="link-desc">nostalgic game engine</div>
+    </a>    
+    <a href="https://twitter.com/spatialfree" target="blank" title="twitter" class="link">
+      <div class="row"><img src="/res/twitter-icon.svg" width="48px" /><div>twitter</div></div>
+      <div class="link-desc">connecting with peers</div>
+    </a>
+    <a href="https://linkedin.com/in/ethanmerchant" target="blank" title="linkedin" class="link">
+      <div class="row"><img src="/res/linkedin-icon.svg" width="48px" /><div>linkedin</div></div>
+      <div class="link-desc">mandatory nepotism</div>
+    </a>
+    <a href="mailto:mail@ethanmerchant.com" target="blank" title="email" class="link">
+      <div class="row"><img src="/res/email-icon.svg" width="48px" /><div>email</div></div>
+      <div class="link-desc">longer form contact</div>
+    </a>
+    <a href="/notebook" title="notebook" class="link">
+      <div class="row"><img src="/res/notebook-icon.svg" width="48px" /><div>notebook</div></div>
+      <div class="link-desc">offloading persistent ideas</div>
+    </a>
+  </div>
 
-  <div class="row2column" style="display: flex; text-align:center;">
+  <!-- <div class="row2column" style="display: flex; text-align:center;">
     <a href="/notebook" title="public notebook">
       <div class="panel">
         <div class="panel-img" style="background-image: url(/res/flexible-grid.gif);"></div>
         <h2>notebook</h2>
-        <!-- <svg viewBox="0 0 640 512" class="svg-inline" style="height: 64px;">
+        <svg viewBox="0 0 640 512" class="svg-inline" style="height: 64px;">
           <path fill="currentColor"
           d="M208 352c-2.39 0-4.78.35-7.06 1.09C187.98 357.3 174.35 360 160 360c-14.35 0-27.98-2.7-40.95-6.91-2.28-.74-4.66-1.09-7.05-1.09C49.94 352-.33 402.48 0 464.62.14 490.88 21.73 512 48 512h224c26.27 0 47.86-21.12 48-47.38.33-62.14-49.94-112.62-112-112.62zm-48-32c53.02 0 96-42.98 96-96s-42.98-96-96-96-96 42.98-96 96 42.98 96 96 96zM592 0H208c-26.47 0-48 22.25-48 49.59V96c23.42 0 45.1 6.78 64 17.8V64h352v288h-64v-64H384v64h-76.24c19.1 16.69 33.12 38.73 39.69 64H592c26.47 0 48-22.25 48-49.59V49.59C640 22.25 618.47 0 592 0z"
           class=""></path>
-        </svg><br><br> -->
+        </svg><br><br>
         <p>a legible distilled down copy of my notes. *not a blog</p>
       </div>
     </a>
@@ -56,15 +79,15 @@
       <div class="panel">
         <div class="panel-img" style="background-image: url(/res/hive.gif);"></div>
         <h2>tutoring</h2>
-        <!-- <svg viewBox="0 0 512 512" class="svg-inline" style="height: 64px;">
+        <svg viewBox="0 0 512 512" class="svg-inline" style="height: 64px;">
           <path fill="currentColor"
           d="M352 96c0-53.02-42.98-96-96-96s-96 42.98-96 96 42.98 96 96 96 96-42.98 96-96zM233.59 241.1c-59.33-36.32-155.43-46.3-203.79-49.05C13.55 191.13 0 203.51 0 219.14v222.8c0 14.33 11.59 26.28 26.49 27.05 43.66 2.29 131.99 10.68 193.04 41.43 9.37 4.72 20.48-1.71 20.48-11.87V252.56c-.01-4.67-2.32-8.95-6.42-11.46zm248.61-49.05c-48.35 2.74-144.46 12.73-203.78 49.05-4.1 2.51-6.41 6.96-6.41 11.63v245.79c0 10.19 11.14 16.63 20.54 11.9 61.04-30.72 149.32-39.11 192.97-41.4 14.9-.78 26.49-12.73 26.49-27.06V219.14c-.01-15.63-13.56-28.01-29.81-27.09z"
           class=""></path>
-        </svg><br><br> -->
+        </svg><br><br>
         <p>learn how to navigate the waves of technological advancement with one on one tutoring...</p>
       </div>
     </a>
-  </div>
+  </div> -->
 
   <!-- <div style="display: flex; flex-flow: column;">
     <div style="height: 256px; background-image: url(/res/flexible-grid.gif); flex-grow: 1; background-size: cover; background-position: center;"></div>
@@ -72,13 +95,17 @@
     <div style="height: 256px; background-image: url(/res/hive.gif); flex-grow: 1; background-size: cover; background-position: center;"></div>
   </div> -->
   <br>
-  <div class="vid" id="twitch-embed"></div>
-  <br>
-  <!-- <a href="https://www.youtube.com/user/Volxel" style="display: block; text-align: center;"><img src="/res/youtube-icon.png" width="32px"></a> -->
-  <div class="vid"><iframe width="854" height="480" src="https://www.youtube.com/embed/videoseries?list=PL4kX1NZYrglCkVPSLQ_U8alkIbTb7wBba"
-    title="YouTube video player" frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen></iframe></div>
+  <div class="row2column" style="display: flex; text-align:center;">
+    <div class="vid" id="twitch-embed"></div>
+    <!-- <br> -->
+    <!-- <a href="https://www.youtube.com/user/Volxel" style="display: block; text-align: center;"><img src="/res/youtube-icon.png" width="32px"></a> -->
+    <div class="vid">
+      <iframe src="https://www.youtube.com/embed/videoseries?list=PL4kX1NZYrglCkVPSLQ_U8alkIbTb7wBba"
+      title="YouTube video player" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe>
+    </div>
+  </div>
 
   <!-- <div class="project" style="background-image: url(/res/mesothelae.mp4)">empty cave</div> -->
   <div id="scroller" style="position: absolute; height: 4px; width: 12px; background-color: white; z-index: 100; mix-blend-mode: difference;"></div>

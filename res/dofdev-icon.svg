@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   height="235.452"
+   width="261.728"
+   viewBox="0 0 245.371 220.736"
+   version="1.1"
+   id="svg4"
+   sodipodi:docname="dofdev-icon.svg"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+  <metadata
+     id="metadata10">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs8">
+    <clipPath
+       id="clip1">
+      <path
+         id="path1489"
+         d="M 0 276 L 530.972656 276 L 530.972656 551.984375 L 0 551.984375 Z M 0 276 " />
+    </clipPath>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient909"
+       id="linearGradient995"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(6.1875895,0,0,6.1875895,-483.95802,-122.32503)"
+       x1="39.6875"
+       y1="72.104164"
+       x2="59.53125"
+       y2="72.104164" />
+    <linearGradient
+       id="linearGradient909"
+       inkscape:collect="always">
+      <stop
+         id="stop905"
+         offset="0"
+         style="stop-color:#00ffff;stop-opacity:1;" />
+      <stop
+         id="stop907"
+         offset="1"
+         style="stop-color:#ffffff;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient861"
+       id="linearGradient993"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(6.1875895,0,0,6.1875895,-483.95802,123.24495)"
+       x1="39.6875"
+       y1="52.260414"
+       x2="59.53125"
+       y2="52.260414" />
+    <linearGradient
+       id="linearGradient861"
+       inkscape:collect="always">
+      <stop
+         id="stop857"
+         offset="0"
+         style="stop-color:#0000ff;stop-opacity:1" />
+      <stop
+         id="stop859"
+         offset="1"
+         style="stop-color:#ff00ff;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient917"
+       id="linearGradient991"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(6.1875895,0,0,-6.1875895,-483.95802,769.9769)"
+       x1="59.53125"
+       y1="52.260414"
+       x2="59.53125"
+       y2="72.104164" />
+    <linearGradient
+       id="linearGradient917"
+       inkscape:collect="always">
+      <stop
+         id="stop913"
+         offset="0"
+         style="stop-color:#ff00ff;stop-opacity:1" />
+      <stop
+         id="stop915"
+         offset="1"
+         style="stop-color:#ffffff;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient901"
+       id="linearGradient989"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(6.1875895,0,0,-6.1875895,-483.95802,769.9769)"
+       x1="39.6875"
+       y1="52.260414"
+       x2="39.6875"
+       y2="72.104164" />
+    <linearGradient
+       id="linearGradient901"
+       inkscape:collect="always">
+      <stop
+         id="stop897"
+         offset="0"
+         style="stop-color:#0000ff;stop-opacity:1" />
+      <stop
+         id="stop899"
+         offset="1"
+         style="stop-color:#00ffff;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient893"
+       id="linearGradient987"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(6.1875895,0,0,6.1875895,-483.95802,-122.32501)"
+       x1="46.302082"
+       y1="65.489578"
+       x2="39.6875"
+       y2="72.104164" />
+    <linearGradient
+       id="linearGradient893"
+       inkscape:collect="always">
+      <stop
+         id="stop889"
+         offset="0"
+         style="stop-color:#00ff00;stop-opacity:1" />
+      <stop
+         id="stop891"
+         offset="1"
+         style="stop-color:#00ffff;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient925"
+       id="linearGradient985"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(6.1875895,0,0,6.1875895,-483.95802,-122.32503)"
+       x1="66.145836"
+       y1="65.489578"
+       x2="59.53125"
+       y2="72.104164" />
+    <linearGradient
+       id="linearGradient925"
+       inkscape:collect="always">
+      <stop
+         id="stop921"
+         offset="0"
+         style="stop-color:#ffff00;stop-opacity:1" />
+      <stop
+         id="stop923"
+         offset="1"
+         style="stop-color:#ffffff;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient877"
+       id="linearGradient983"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(6.1875895,0,0,6.1875895,-483.95802,123.24495)"
+       x1="66.145836"
+       y1="45.645828"
+       x2="59.53125"
+       y2="52.260414" />
+    <linearGradient
+       id="linearGradient877"
+       inkscape:collect="always">
+      <stop
+         id="stop873"
+         offset="0"
+         style="stop-color:#ff0000;stop-opacity:1" />
+      <stop
+         id="stop875"
+         offset="1"
+         style="stop-color:#ff00ff;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient853"
+       id="linearGradient981"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(3.0937947,0,0,3.0937947,-361.17304,264.46376)"
+       x1="39.6875"
+       y1="58.874992"
+       x2="52.916668"
+       y2="45.645828" />
+    <linearGradient
+       id="linearGradient853"
+       inkscape:collect="always">
+      <stop
+         id="stop849"
+         offset="0"
+         style="stop-color:#0000ff;stop-opacity:1" />
+      <stop
+         id="stop851"
+         offset="1"
+         style="stop-color:#000000;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient885"
+       id="linearGradient979"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(6.1875895,0,0,-6.1875895,-483.95802,688.12024)"
+       x1="46.302082"
+       y1="45.645832"
+       x2="46.302082"
+       y2="65.489578" />
+    <linearGradient
+       id="linearGradient885"
+       inkscape:collect="always">
+      <stop
+         id="stop881"
+         offset="0"
+         style="stop-color:#000000;stop-opacity:1;" />
+      <stop
+         id="stop883"
+         offset="1"
+         style="stop-color:#00ff00;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient941"
+       id="linearGradient977"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(6.1875895,0,0,6.1875895,-483.95802,-122.32501)"
+       x1="46.302082"
+       y1="65.489578"
+       x2="66.145836"
+       y2="65.489578" />
+    <linearGradient
+       id="linearGradient941"
+       inkscape:collect="always">
+      <stop
+         id="stop937"
+         offset="0"
+         style="stop-color:#00ff00;stop-opacity:1" />
+      <stop
+         id="stop939"
+         offset="1"
+         style="stop-color:#ffff00;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient869"
+       id="linearGradient975"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(6.1875895,0,0,6.1875895,-483.95802,123.24494)"
+       x1="46.302082"
+       y1="45.645832"
+       x2="66.145836"
+       y2="45.645832" />
+    <linearGradient
+       id="linearGradient869"
+       inkscape:collect="always">
+      <stop
+         id="stop865"
+         offset="0"
+         style="stop-color:#000000;stop-opacity:1;" />
+      <stop
+         id="stop867"
+         offset="1"
+         style="stop-color:#ff0000;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient933"
+       id="linearGradient973"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(6.1875895,0,0,-6.1875895,-483.95802,688.12024)"
+       x1="66.145836"
+       y1="45.645832"
+       x2="66.145836"
+       y2="65.489578" />
+    <linearGradient
+       id="linearGradient933"
+       inkscape:collect="always">
+      <stop
+         id="stop929"
+         offset="0"
+         style="stop-color:#ff0000;stop-opacity:1" />
+      <stop
+         id="stop931"
+         offset="1"
+         style="stop-color:#ffff00;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <sodipodi:namedview
+     pagecolor="#808080"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1027"
+     id="namedview6"
+     showgrid="false"
+     inkscape:zoom="2.0046549"
+     inkscape:cx="175.44839"
+     inkscape:cy="93.542866"
+     inkscape:window-x="-8"
+     inkscape:window-y="22"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="surface1412537" />
+  <g
+     id="surface1412537"
+     transform="matrix(1.2500052,0,0,1.2500052,318.19291,-345.68437)">
+    <rect
+       inkscape:export-ydpi="1228.7998"
+       inkscape:export-xdpi="1228.7998"
+       inkscape:export-filename="C:\dofdev\Web Development\dofdev\res\shirt-icon.png"
+       y="222.49014"
+       x="-295.13336"
+       height="277.20392"
+       width="277.20392"
+       id="rect945"
+       style="opacity:1;fill:#808080;fill-opacity:0;stroke:none;stroke-width:9.55530357;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke fill markers" />
+    <path
+       inkscape:export-ydpi="1228.7998"
+       inkscape:export-xdpi="1228.7998"
+       inkscape:export-filename="C:\dofdev\Web Development\dofdev\res\shirt-icon.png"
+       style="fill:none;stroke:url(#linearGradient973);stroke-width:11.0881567;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M -74.674765,282.89752 V 405.68249"
+       id="path947"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:export-ydpi="1228.7998"
+       inkscape:export-xdpi="1228.7998"
+       inkscape:export-filename="C:\dofdev\Web Development\dofdev\res\shirt-icon.png"
+       style="fill:none;stroke:url(#linearGradient975);stroke-width:11.0881567;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M -197.45972,405.68249 H -74.674765"
+       id="path951"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:export-ydpi="1228.7998"
+       inkscape:export-xdpi="1228.7998"
+       inkscape:export-filename="C:\dofdev\Web Development\dofdev\res\shirt-icon.png"
+       style="fill:none;stroke:url(#linearGradient977);stroke-width:11.0881567;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M -197.45972,282.89752 H -74.674765"
+       id="path953"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:export-ydpi="1228.7998"
+       inkscape:export-xdpi="1228.7998"
+       inkscape:export-filename="C:\dofdev\Web Development\dofdev\res\shirt-icon.png"
+       sodipodi:nodetypes="sssss"
+       inkscape:connector-curvature="0"
+       id="path949"
+       d="m -139.92918,364.35934 c 0,9.16884 -7.43307,16.60188 -16.60223,16.60188 -9.16915,0 -16.60223,-7.43304 -16.60223,-16.60188 0,-9.16914 7.43308,-16.60223 16.60223,-16.60223 9.16915,0 16.60223,7.43309 16.60223,16.60223 z"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:11.0881567;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke fill markers" />
+    <path
+       inkscape:export-ydpi="1228.7998"
+       inkscape:export-xdpi="1228.7998"
+       inkscape:export-filename="C:\dofdev\Web Development\dofdev\res\shirt-icon.png"
+       style="fill:none;stroke:url(#linearGradient979);stroke-width:11.0881567;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M -197.45972,405.68249 V 282.89752"
+       id="path955"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:export-ydpi="1228.7998"
+       inkscape:export-xdpi="1228.7998"
+       inkscape:export-filename="C:\dofdev\Web Development\dofdev\res\shirt-icon.png"
+       style="fill:none;stroke:url(#linearGradient981);stroke-width:11.0881567;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -238.38805,446.61081 40.92833,-40.92832"
+       id="path957"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:export-ydpi="1228.7998"
+       inkscape:export-xdpi="1228.7998"
+       inkscape:export-filename="C:\dofdev\Web Development\dofdev\res\shirt-icon.png"
+       style="fill:none;stroke:url(#linearGradient983);stroke-width:11.0881567;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -115.60308,446.61081 40.928315,-40.92832"
+       id="path959"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:export-ydpi="1228.7998"
+       inkscape:export-xdpi="1228.7998"
+       inkscape:export-filename="C:\dofdev\Web Development\dofdev\res\shirt-icon.png"
+       style="fill:none;stroke:url(#linearGradient985);stroke-width:11.0881567;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -74.674765,282.89752 -40.928315,40.92833"
+       id="path961"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:export-ydpi="1228.7998"
+       inkscape:export-xdpi="1228.7998"
+       inkscape:export-filename="C:\dofdev\Web Development\dofdev\res\shirt-icon.png"
+       style="fill:none;stroke:url(#linearGradient987);stroke-width:11.0881567;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -197.45972,282.89752 -40.92833,40.92833"
+       id="path963"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:export-ydpi="1228.7998"
+       inkscape:export-xdpi="1228.7998"
+       inkscape:export-filename="C:\dofdev\Web Development\dofdev\res\shirt-icon.png"
+       style="fill:none;stroke:url(#linearGradient989);stroke-width:11.0881567;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -238.38805,446.61081 v -122.78496 0"
+       id="path965"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:export-ydpi="1228.7998"
+       inkscape:export-xdpi="1228.7998"
+       inkscape:export-filename="C:\dofdev\Web Development\dofdev\res\shirt-icon.png"
+       style="fill:none;stroke:url(#linearGradient991);stroke-width:11.0881567;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M -115.60308,446.61081 V 323.82585"
+       id="path967"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:export-ydpi="1228.7998"
+       inkscape:export-xdpi="1228.7998"
+       inkscape:export-filename="C:\dofdev\Web Development\dofdev\res\shirt-icon.png"
+       style="fill:none;stroke:url(#linearGradient993);stroke-width:11.0881567;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -238.38805,446.61081 h 122.78497"
+       id="path969"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:export-ydpi="1228.7998"
+       inkscape:export-xdpi="1228.7998"
+       inkscape:export-filename="C:\dofdev\Web Development\dofdev\res\shirt-icon.png"
+       style="fill:none;stroke:url(#linearGradient995);stroke-width:11.0881567;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M -115.60308,323.82585 H -238.38805"
+       id="path971"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>
