@@ -17,49 +17,364 @@
 <body>
   <div id="nav"></div>
   <br>
-  <h1>notebook</h1>
-  <p>a public facing notebook that condenses some of the best ideas i've came across *not a blog</p>
-  <div class="featured">
-    <sub style="margin: 0 1rem;">2021/12/11</sub>
-    <h2>engineered autonomy</h2>
-    <img src="engineered-autonomy/graphic.gif" width="100%" style="mix-blend-mode: screen;">
-    <p>The era of the college cog is fading as access to resources and knowledge continues to expand. While
-    learning to live autonomously does not come without a debt of responsibility, the key is in...</p>
-    <a href="engineered-autonomy" style="display: block; text-align: center;">[ read more ]</a>
-    <br><br>
+  
+
+  <div id="controls">
+    <a id="page-back"><div class="btn small"><</div></a>
+    <div id="page-number">&nbsp;&nbsp;00 / 10&nbsp;&nbsp;</div>
+    <a id="page-next"><div class="btn small">></div></a>
+  </div>
+
+  <div id="pages">
+
+    <div style="display: flex; flex-direction: column; align-items: center;">
+      <div class="timestamp">yyyy/mm/dd</div>
+      <br>
+      <h1>Notebook</h1>
+      <p>ideas that kept me up at night</p>
+      <img src="/res/notebook-icon.svg" width="64px">
+      <div style="font-family: serif; text-align: center; font-size: 36px; margin: 1em auto; color: #666">&conint;</div>
+    </div>
+
+    <!-- ------------------------------------------------------------- -->
+
+    <div>
+      <div class="timestamp">2021/08/22</div>
+      <h1>Pseudo code</h1>
+      <p>An approachable and portable notation for systems.</p>
+      <br>
+      <p>As you remove code's language and context specific formalities it becomes pseudo code. A dense powerful and accessible vessel of process information:</p>
+      <pre class="crt">
+// attendance incentive system
+
+sessions = #
+streak = #
+
+Miss()
+  streak = Min(0, streak - 1)
+  if (streak < 0) 
+    then sessions--
+
+Show()
+  streak = Max(1, streak + 1)
+  if (streak is not divisible by 4) 
+    then sessions--
+      </pre>
+      <p>AI language models like <a href="https://openai.com/blog/openai-codex/">OpenAI Codex</a> can both convert to and from this format effortlessly. Inadvertently making it the most powerful way to open source pieces of code across languages and toolsets.</p>
+      <p>Best practice conventions seem very flexible in my experience though there's plenty of room for experimentation and iteration.</p>
+    </div>
+
+    <!-- ------------------------------------------------------------- -->
+
+    <div>
+      <div class="timestamp">2021/10/10</div>
+      <h1>Democrandom</h1>
+      <p><span style="text-decoration: line-through;">Day:1</span> Year:244 patch to account for the dramatic drag of divisive side effects inherent to the mechanics of default democratic systems</p>
+      <ul>
+        <li>The top one or two isn't guaranteed victory</li>
+        <li>A "side's vote" does not get lost over smaller issues</li>
+        <li>Can blame chance rather than your neighbor</li>
+      </ul>
+      <br>
+      <pre>
+cutoff = 0.5 / # of options
+
+option.chance = option.votes / total votes
+option.chance = max(option.chance - cutoff, 0)
+option.chance /= total chances
+
+roll = random(0.0-1.0)
+foreach option in options
+  if roll < option.chance
+    then return option as winner
+  else 
+    roll -= option.chance
+      </pre>
+      <div id="options"></div>
+      <div class="switch" onclick="add()" style="margin: 0 auto; border-radius: 0 0 6rem 6rem; font-size: 24px; padding: 0.5rem;">+</div>
+      <br><br>
+      <div style="display: flex; align-items: center; margin: 0 auto; padding-right: 1rem; width: fit-content; background-color: var(--white); border: 2px solid var(--white); border-radius: 10rem;">
+        <div class="btn small" onclick="result(this)">▶</div>
+        <div id="result" style="margin-left: 1rem;">...</div>
+      </div>
+      <script>
+        $(document).ready(function() {
+          for (let i = 0; i < 3; i++) {
+            add()
+          }
+        })
+
+        function add() {
+          let html = $("#options").append(
+
+          `<div class="option">
+            <div class="switch" onclick="remove(this)">✖</div>
+            <input type="text" oninput="chance()" placeholder="option" style="width: 180px;">
+            <input type="number" oninput="chance()" placeholder="# votes" style="width: 100px;">
+            <div class="chance">&nbsp;00%</div>
+          </div>`
+          )
+          
+        }
+
+        function remove(el) {
+          $(el).parent().remove()
+        }
+        
+        var options = []
+        function chance() {
+          let $options = $("#options").children()
+          options = []
+
+          let cutoff = 0.5 / $options.length
+
+          let totalVotes = 0
+          for (let i = 0; i < $options.length; i++) {
+            let $option = $($options[i])
+            let option = {
+              name: $option.find("input[type=text]").val(),
+              votes: parseInt($option.find("input[type=number]").val()),
+              chance: 0
+            }
+            options.push(option)
+
+            totalVotes += option.votes
+          }
+          
+          let totalChance = 0
+          for (let i = 0; i < options.length; i++) {
+            let option = options[i]
+            option.chance = Math.max((option.votes / totalVotes) - cutoff, 0)
+            totalChance += option.chance
+            console.log(option.name, option.votes / totalVotes, option.chance)
+          }
+
+          for (let i = 0; i < options.length; i++) {
+            let option = options[i]
+            option.chance /= totalChance
+            console.log(option.name, option.chance)
+            let c = `${Math.round(option.chance * 100)}%`
+            if (c.length < 3) c = "0" + c
+            c = "&nbsp;" + c
+            $($options[i]).find(".chance").html(c)
+          }
+
+        }
+
+        var ran = false
+        function result(el) {
+          ran = !ran
+          
+          if (!ran) {
+            $(el).css("background-color", "#cc8080")
+
+            let r = Math.random()
+            for (let i = 0; i < options.length; i++) {
+              let option = options[i]
+              if (r < option.chance) {
+                $("#result").html(option.name)
+                return
+              }
+              r -= option.chance
+            }
+          }
+          else {
+            $(el).css("background-color", "#80cc80")
+
+            $("#result").html("")
+          }
+        }
+      </script>
+      <style>
+        .switch {
+          /* margin: 0 auto;  */
+          /* margin-bottom: 1px; */
+          padding: 0.25rem 0.25rem 0.25rem 0.5rem;
+          max-width: 48px;
+          text-align: center; 
+          font-size: 14px;
+          background-color: var(--light);
+          color: var(--dark);
+          border-radius: 1rem 0 0 1rem;
+          /* font-weight: bold; */
+          cursor: pointer;
+          user-select: none;
+        }
+        #options {
+          display: flex;
+          flex-direction: column;
+          align-items: baseline;
+          margin: 0 auto;
+          width: fit-content;
+        }
+        .option {
+          display: flex;
+          align-items: center;
+          margin-bottom: 1px;
+        }
+        .option input {
+          border: none;
+          /* width: 100%; */
+          margin: 0;
+          margin-right: 1px;
+          /* flex-grow: 1; */
+          font-size: 14px;
+          
+        }
+        @media screen and (max-width: 800px) {
+          #options {
+            align-items: center;
+          }
+        }
+      </style>
+
+    </div>
+
+    <!-- ------------------------------------------------------------- -->
+
+    <div>
+      <div class="timestamp">2021/12/11</div>
+      <h1>Free will</h1>
+      <p>A physics based model for the metaphysical.</p>
+      <br>
+      <p>Framing free will as acknowledging the unique attributes and experiences of the self to consciously inform the
+        actions
+        to take in life.</p>
+      <p>Leveraging eccentricities and giving spent time personal relevance.</p>
+      <h2>Solving the &quot;What to Learn&quot; Problem</h2>
+      <p>Many try and answer this as if it were a static question with a knowable answer. I&#39;d argue that it is purely a
+        directional problem that is always shifting, as you and the world are both in a constant state of change. So instead
+        we need a model that reflects this reality and leads us to the best outcomes.</p>
+      <pre>direction = (to - from).normalized</pre>
+      <p>To derive a <strong>direction</strong> we need to know where we are coming <strong>from</strong>, and where we&#39;d
+        like <strong>to</strong> go. We then <strong>normalize</strong>(set length to 1) the difference between the two to get
+        a consistent variable to work with.</p>
+      <p>Once a direction is clear, the obstacles you encounter become what is necessary to overcome and learn.</p>
+      <h3>The &quot;Learning to Learn&quot; Lie</h3>
+      <p>Now that you know what you need to learn. You can see how our education systems are failing us. They both assume what
+        you need to know and manufacture contrived obstacles to judge you upon.</p>
+      <p>While the long term success rate of their system is higher than zero and is largely the result of trying to funnel as
+        many students through their structure as possible. We can do better, starting with the people who are hurt more then
+        they are helped by this system.</p>
+      <h2>Building Momentum</h2>
+      <pre>momentum = resources * effort</pre>
+      <p>A direction won&#39;t affect much until it is acted upon, by employing <strong>resources</strong> and
+        <strong>effort</strong> momentum can be generated. Your capacity in these areas is something you need to be aware of
+        when taking action or setting expectations. There is plenty of good advice out there i.e. the tortoise beats the hare
+        in a race, bikers gear down when encountering tough terrain, the little engine that could... The one I&#39;d like to
+        highlight the most is in valuing the deliberate actions you take over the results you achieve, because the former is
+        actually within your control and shines through in long run.
+      </p>
+      <pre>velocity = momentum / mass</pre>
+      <p>Just like fat there are both necessary kinds of <strong>mass</strong> as well as forms to avoid. For example you need
+        at least some features and man power to get a company/product on the market. Though you can easily slip into feature
+        creep, untenable collateral, sunk cost fallacy just to name a few. A good rule of thumb is that you want your momentum
+        &gt; mass. If that is not the case, you&#39;ll need to take a critical eye to what you are doing and see what you can
+        shave off.</p>
+      <pre>velocity /= 1 + drag</pre>
+      <p><strong>Drag</strong> goes by many names though it can be identified as anything that tries to cling on for its own
+        sake while your trying to make progress.</p>
+      <pre>position += direction * velocity</pre>
+      <p>With all of this put together your <strong>position</strong> will then be moving in the direction of your choosing
+        *autonomy. Keep in mind that progress is usually slow but soon enough you will have quite a bit to look back on, not
+        to mention a different perspective from your new found position in life.</p>
+      <h3>Overcoming Obstacles</h3>
+      <p>There is no one size fits all solution to deploy when stumbling upon a complication. Instead what matters the most,
+        is how much time and effort the problem is worth. Because, at the end of the day you can always regroup and attack the
+        problem anew. </p>
+      <p>As you gain new insight by wrestling with the issue, its important to consistently re-evaluate your strategy as well
+        as your pre-conceived short term goals. In order to not get lost and frustrated in the swamp of complexity.</p>
+    </div>
+
+    <!-- ------------------------------------------------------------- -->
+    
   </div>
 
   <!-- <p>my lived experience has shown me that your fundamental interactions with a system changes when you've gone through
   the process of its creation. as the perspective that you gain is not just a fleeting abstract acknowledgement of the
   underlying truths and forces in play, but a permanent shift that frees you from being readily affected by them.</p> -->
-
-
-
-  <!-- <div class="context">how do game makers soften divisive outcomes and ensure continued engagement when players of variable likelihood of success compete?</div>
-  <pre>
-  RNG (random number generation)
-
-  // democracy hotfix
-  % of vote = % of chance
-  * with an agreed upon skew and required min
-  </pre>
-  <div class="context">view counts are an inflated metric especially in the age of quick content *tiktok</div>
-  <pre>
-  watch time / video time > view count
-  </pre>
-  <div class="context">spatial coding can be approached from the binary level up. to compete more wholly with the incumbant text based model</div> 
-  <img src="truth.png"> -->
-
+  <br><br><br>
   <div id="footer"></div>
 </body>
 
 <style>
-.context {
-  margin-top: 3rem;
-  margin-bottom: 1rem;
-}
-.featured {
-  border-bottom: 1px solid #808080;
-}
+  @font-face {
+    font-family: "Middle Ages Deco";
+    src: url("/res/MiddleAgesDeco.ttf");
+  }
+  /* @font-face {
+    font-family: "Vacer";
+    src: url("/res/VacerSansPersonalBook.ttf");
+  }
+  h1 {
+    font-family: "Vacer", serif;
+    letter-spacing: 1px;
+  } */
+  h1::first-letter {
+    font-size: 112px;
+    letter-spacing: 14px;
+    font-family: "Middle Ages Deco", serif;
+  }
+  #controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+  }
+  .small {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    min-height: 32px;
+    font-size: 1.5em;
+    margin: 0;
+    background-color: rgb(122, 122, 122);
+    text-align: center;
+    user-select: none;
+    cursor: pointer;
+  }
+  .timestamp {
+    text-align: center;
+    font-size: 12px;
+    background-color: rgb(122, 122, 122);
+    width: fit-content;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+  }
+  @media screen and (max-width: 800px) {
+    h1::first-letter {
+      font-size: 64px;
+      letter-spacing: 8px;
+    }
+  }
 </style>
+
+<script>
+  $(document).ready(function() {
+    let queryString = window.location.search;
+    let urlParams = new URLSearchParams(queryString);
+    let p = parseInt(urlParams.get('page'));
+    // if NaN, set to 0
+    if (isNaN(p)) {
+      p = 0;
+    }
+
+    let $pages = $('#pages').children();
+    $('#page-next').attr('href', '?page=' + (p + 1));
+    if (p + 1 == $pages.length) { $('#page-next').css('visibility', 'hidden'); }
+    $('#page-back').attr('href', '?page=' + (p - 1));
+    if (p - 1 < 0) { $('#page-back').css('visibility', 'hidden') }
+
+    for (let i = 0; i < $pages.length; i++) {
+      if (i == p) {
+        // $pages.eq(i).css('display', 'block');
+      } else {
+        $pages.eq(i).css('display', 'none');
+      }
+    }
+    $('#page-number').html(`&nbsp;&nbsp;${p} / ${$pages.length - 1}&nbsp;&nbsp;`)
+  });
+</script>
 </html>
