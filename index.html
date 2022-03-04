@@ -33,9 +33,26 @@
 oriels 0.0.103
 &#169; 2018-22 dofdev
 
-starting out... 32%
-█████▒▒▒▒▒▒▒▒
+<span id='commits'></span>
+███████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 32%
   </pre>
+
+  <script>
+    var url = 'https://api.github.com/repos/dofdev/oriels/commits/main';
+    $.ajax({
+      type: 'GET',
+      url: url,
+      success: function (data) {
+        let html = '';
+        html += data.commit.author.date + '</br>'
+        html += data.files.length + ' modified files</br>'
+        html += '"' + data.commit.message + '"</br>'
+
+        $('#commits').html(html)
+        console.log(data)
+      }
+    })
+  </script>
   <br>
   <div style="margin: 1rem;">
     <a href="/devsupport" title="dev support" class="link">
