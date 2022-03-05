@@ -30,12 +30,18 @@
   <br>
   <p>Third generation software developer and tech optimist. This site is a central hub for all my work, ideas, and services:</p>
   <pre>
-oriels 0.0.103
-&#169; 2018-22 dofdev
+<div style="background-image: url(/res/cube.gif);
+  width: 48px;
+  height: 48px;
+  background-size: 320px;
+  background-position: center;
+  mix-blend-mode: screen;"></div>
+oriels 
+<sub>v0.0.103  
+&#169;2018-22 dofdev</sub>
 
 <span id='commits'></span>
-███████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 32%
-  </pre>
+</pre>
 
   <script>
     var url = 'https://api.github.com/repos/dofdev/oriels/commits/main';
@@ -44,12 +50,14 @@ oriels 0.0.103
       url: url,
       success: function (data) {
         let html = '';
-        html += data.commit.author.date + '</br>'
-        html += data.files.length + ' modified files</br>'
         html += '"' + data.commit.message + '"</br>'
-
+        html += '<sub>'
+        html += data.stats.additions + '+ '
+        html += data.stats.deletions + '-  '
+        html += data.commit.author.date.slice(0, 10)
+        html += '</sub></br><br>'
         $('#commits').html(html)
-        console.log(data)
+        // console.log(data)
       }
     })
   </script>
@@ -61,7 +69,7 @@ oriels 0.0.103
     </a>
     <a href="https://dofdev.org" target="blank" title="dofdev" class="link">
       <div class="row"><img src="/res/dofdev-icon.svg"><div>dofdev</div></div>
-      <div class="link-desc">im the engineer of this innovative XR interaction endevour</div>
+      <div class="link-desc">engineer of this innovative XR interaction endeavor</div>
     </a>
     <a href="https://twitter.com/spatialfree" target="blank" title="twitter" class="link">
       <div class="row"><img src="/res/twitter-icon.svg"><div>twitter</div></div>
