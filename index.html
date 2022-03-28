@@ -14,7 +14,6 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   <script src="/include/includer.js?v9"></script>
-	<script src="https://embed.twitch.tv/embed/v1.js"></script>
 </head>
 
 <body>
@@ -132,16 +131,11 @@ oriels
     <div style="height: 256px; background-image: url(/res/hive.gif); flex-grow: 1; background-size: cover; background-position: center;"></div>
   </div> -->
   <br>
-  <div class="row2column" style="display: flex; text-align:center;">
-    <div class="vid" id="twitch-embed"></div>
-    <!-- <br> -->
-    <!-- <a href="https://www.youtube.com/user/Volxel" style="display: block; text-align: center;"><img src="/res/youtube-icon.png" width="32px"></a> -->
-    <div class="vid">
-      <iframe src="https://www.youtube.com/embed/videoseries?list=PL4kX1NZYrglCkVPSLQ_U8alkIbTb7wBba"
-      title="YouTube video player" frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen></iframe>
-    </div>
+  <div class="vid">
+    <iframe src="https://www.youtube.com/embed/videoseries?list=PL4kX1NZYrglCkVPSLQ_U8alkIbTb7wBba"
+    title="YouTube video player" frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen></iframe>
   </div>
 
   <!-- <div class="project" style="background-image: url(/res/mesothelae.mp4)">empty cave</div> -->
@@ -192,24 +186,9 @@ oriels
     </div>
   </a>
 
-  <br><br><br><br><br><br><br><br><br><br>
+  <div style="margin: 26em;"></div>
 	
 	<div id="footer"></div>
 </body>
 
-<script>	
-	var embed = new Twitch.Embed("twitch-embed", {
-		width: 854,
-		height: 480,
-		channel: "spatialfree",
-		layout: "video",
-		muted: false,
-		autoplay: false
-	})
-
-	embed.addEventListener(Twitch.Embed.VIDEO_READY, () => {
-		var player = embed.getPlayer()
-		player.play()
-	})
-</script>
 </html>
