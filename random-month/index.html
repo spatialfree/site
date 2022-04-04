@@ -1,22 +1,23 @@
 <head>
-  <link rel="stylesheet" href="/style.css?v9">
+  <link rel="stylesheet" href="/style.css?v10">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="/include/includer.js?v9"></script>
+  <script src="/include/includer.js?v10"></script>
 </head>
 
 <body>
   <div class="content">
+    <br>
+    <div id="minimap"></div>
     <div id="wall" style="display: none;">
       <div>what is</div>
       <input type="text" id="passphrase" placeholder="dgg4life">
     </div>
   
-    <div id="month">&#127922;</div>
     <div id="times">evenly distributed month deployment tech</div>
+    <div id="month">&#127922;</div>
     <br>
-    <br>
-    <div class="btn" onclick="month()">
-      <img src="dggL.png" width="48px" height="48px" >
+    <div class="btn" onclick="deploy()">
+      <img src="dggL.png" width="48px" height="48px" style="user-select: none;">
     </div>
   </div>
 </body>
@@ -79,6 +80,14 @@ var months = [
 $(document).ready(function() {
 })
 
+function deploy() {
+  $("#month").html('...')
+  $("#times").hide()
+
+  // wait one sec then call month()
+  setTimeout(month, 500)
+}
+
 function month() {
   // random month
   // avg times
@@ -97,8 +106,18 @@ function month() {
   }
 
   $("#month").html(month.name)
-  $("#times").html('deployed: ' + month.times)
   month.times++
+
+
+  // minimap
+  var minimap = $("#minimap")
+  var html = ""
+  for (var i = 0; i < months.length; i++) {
+    html += '<div class="mm">' 
+    html += months[i].name + ': ' + months[i].times
+    html += '</div>'
+  }
+  minimap.html(html)
 }
 </script>
 
@@ -111,7 +130,7 @@ body {
   color: #f2f2f2;
 }
 #times {
-  /* font-size: 40px; */
+  font-size: 20px;
   color: #f2f2f2;
 }
 .content {
@@ -124,5 +143,23 @@ body {
 .btn {
   margin: 1rem 0;
   background-color: #1b4774;
+  transition-duration: 0.2s;
+  width: 256px;
+}
+.btn:hover {
+  border-color: #297bd0 !important;
+  width: 300px;
+  border-radius: 128px !important;
+}
+#minimap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 800px;
+}
+.mm {
+  width: 200px;
+  color: #f2f2f2;
+  font-size: 20px;
 }
 </style>
