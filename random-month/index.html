@@ -1,0 +1,128 @@
+<head>
+  <link rel="stylesheet" href="/style.css?v9">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="/include/includer.js?v9"></script>
+</head>
+
+<body>
+  <div class="content">
+    <div id="wall" style="display: none;">
+      <div>what is</div>
+      <input type="text" id="passphrase" placeholder="dgg4life">
+    </div>
+  
+    <div id="month">&#127922;</div>
+    <div id="times">evenly distributed month deployment tech</div>
+    <br>
+    <br>
+    <div class="btn" onclick="month()">
+      <img src="dggL.png" width="48px" height="48px" >
+    </div>
+  </div>
+</body>
+
+<script>
+// month
+// times used
+
+var months = [
+  {
+    name: "JAN",
+    times: 0
+  },
+  {
+    name: "FEB",
+    times: 0
+  },
+  {
+    name: "MAR",
+    times: 0
+  },
+  {
+    name: "APR",
+    times: 0
+  },
+  {
+    name: "MAY",
+    times: 0
+  },
+  {
+    name: "JUN",
+    times: 0
+  },
+  {
+    name: "JUL",
+    times: 0
+  },
+  {
+    name: "AUG",
+    times: 0
+  },
+  {
+    name: "SEP",
+    times: 0
+  },
+  {
+    name: "OCT",
+    times: 0
+  },
+  {
+    name: "NOV",
+    times: 0
+  },
+  {
+    name: "DEC",
+    times: 0
+  }
+]
+
+$(document).ready(function() {
+})
+
+function month() {
+  // random month
+  // avg times
+  let avg = 0
+  for (var i = 0; i < months.length; i++) {
+    avg += months[i].times
+  }
+  avg = avg / months.length
+  console.log(avg)
+
+  // if less than avg times, then use month
+  var month = months[Math.floor(Math.random() * months.length)]
+  while (month.times > avg) {
+    month = months[Math.floor(Math.random() * months.length)]
+    console.log(month.name + " " + month.times)
+  }
+
+  $("#month").html(month.name)
+  $("#times").html('deployed: ' + month.times)
+  month.times++
+}
+</script>
+
+<style>
+body {
+  background-color: #282828;
+}
+#month {
+  font-size: 256px;
+  color: #f2f2f2;
+}
+#times {
+  /* font-size: 40px; */
+  color: #f2f2f2;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.btn {
+  margin: 1rem 0;
+  background-color: #1b4774;
+}
+</style>

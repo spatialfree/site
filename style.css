@@ -212,6 +212,7 @@ textarea {
 	border: 2px solid transparent;
 	cursor: pointer;
 	text-align: center;
+  user-select: none;
 	font-size: 20px;
   border-radius: 4rem;
   background-color: var(--color);
