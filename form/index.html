@@ -19,25 +19,25 @@
   <br>
 	<h1>form</h1>
   <ol>
-    <li>select student (new or pre-existing *from haedos)</li>
+    <li>select client name (new or pre-existing)</li>
     <li>mark desired time(s) on calender</li>
     <li>fill out the rest as needed and submit</li>
   </ol>
   <form action="https://api.staticforms.xyz/submit" method="post">
-    student: <select name="$student" id="student" onchange="studentSelect(this)"></select><br><br>
-    calender (EST time)</br>
+    calender (EST pm)</br>
     <div id="calender"></div><br>
-    <div id="new-student">
+    client: <select name="$client" id="client" onchange="clientSelect(this)"></select><br><br>
+    <div id="new-client">
       name<br>
-      <input type="text" name="name" placeholder="student name"><br>
+      <input type="text" name="name" placeholder="client name"><br>
       phone<br>
       <input type="text" name="phone" placeholder="(206)782-8410"><br>
       email<br>
       <input type="text" name="email" placeholder="name@example.com"><br>
     </div>
-    <div id="current-student"></div>
-    + sessions: <select name="$sessions" id="sessions"></select><br>
-    <span style="font-style: italic;">*payments are invoiced</span><br><br><br>
+    <div id="current-client"></div>
+    <!-- + sessions: <select name="$sessions" id="sessions"></select><br>
+    <span style="font-style: italic;">*payments are invoiced</span><br><br><br> -->
     notes<br>
     <textarea name="message" rows="4"></textarea><br>
     <a href="/policy" target="_blank">attendance policy</a><br><br>
@@ -54,13 +54,13 @@
 <script>
   const dotw = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']
 	
-	const students = [
+	const clients = [
     { name:"jared", 
-      sessions:32, streak:6, 
+      sessions:32, streak:12, 
       times:[{day:5, hour:5}, {day:5, hour:6}]
     },
     { name:"dallin", 
-      sessions:1, streak:0, 
+      sessions:1, streak:2, 
       times:[{day:0, hour:6}]
     },
   ]
@@ -68,17 +68,17 @@
 	$(document).ready(function() {
     let html = ""
     html += `<option value="new">new</option>`
-    for (let i = 0; i < students.length; i++) {
-      html += `<option value="${students[i].name}">${students[i].name}</option>`
+    for (let i = 0; i < clients.length; i++) {
+      html += `<option value="${clients[i].name}">${clients[i].name}</option>`
     }
-    $("#student").html(html)
+    $("#client").html(html)
 
-    studentSelect(document.getElementById("student"))
+    clientSelect(document.getElementById("client"))
 	})
 
-  var student
-  function studentSelect(el) {
-    student = el.value;
+  var client
+  function clientSelect(el) {
+    client = el.value;
     let html = ""
     let sessions = `
       <option value="01">01 * $20/hr = $20</option>
@@ -87,20 +87,20 @@
       <option value="16">16 * $17/hr = $272</option>
       <option value="32">32 * $16/hr = $512</option>
     `
-    if (student == "new") {
-      $("#new-student").show()
+    if (client == "new") {
+      $("#new-client").show()
       
     } else {
-      $("#new-student").hide()
-      for (s of students) {
-        if (s.name == student) {
-          html += `sessions remaining: ${s.sessions}<br>`
+      $("#new-client").hide()
+      for (s of clients) {
+        if (s.name == client) {
+          // html += `sessions remaining: ${s.sessions}<br>`
           html += `attendance streak: ${s.streak}<br><br>`
         }
       }
       sessions = `<option value="00">use remaining</option>` + sessions
     }
-    $("#current-student").html(html)
+    $("#current-client").html(html)
     $("#sessions").html(sessions)
     calender()
   }
@@ -122,10 +122,10 @@
 	}
 
   function status(day, hour) {
-    for (let i = 0; i < students.length; i++) {
-      for (let j = 0; j < students[i].times.length; j++) {
-        if (students[i].times[j].day == day && students[i].times[j].hour == hour) {
-          if (students[i].name == student) {
+    for (let i = 0; i < clients.length; i++) {
+      for (let j = 0; j < clients[i].times.length; j++) {
+        if (clients[i].times[j].day == day && clients[i].times[j].hour == hour) {
+          if (clients[i].name == client) {
             return "checked"
           } else {
             return "disabled"

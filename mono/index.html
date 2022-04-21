@@ -1,0 +1,153 @@
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/style.css?v10">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="/include/includer.js?v10"></script>
+</head>
+
+<body>
+  <br>
+  <div class="strip" style="text-align: center;">
+    Ethan Merchant
+    <img src="/res/profile-pic.png" width="64px" height="64px" style="border-radius: 64px;">
+    <a href="https://twitter.com/spatialfree">@spatialfree&nbsp;&nbsp;</a>
+  </div>
+  <div onclick="" style="text-align: center;">&#128231;</div>
+  <br>
+  <div id="quad"></div>
+</body>
+
+<script>
+  var quads = [
+    {
+      cells: [
+        {
+          html: "about",
+          link: "quads[0].cells[0]",
+          cells: [
+            { html: "", img: "/res/cube.gif" },
+            { html: "this is me" },
+            { html: "big thing" },
+            { html: "that's awesome" }
+          ]
+        }, 
+        {
+          html: "latest"
+        },
+        {
+          html: "dev support"
+        },
+        { 
+          html: "projects",
+          link: "quads[0].cells[3]",
+          cells: [
+            {
+              html: "Pages",
+              link: "quads[0].cells[3].cells[0]",
+              cells: [
+                { html: "Undemocratic" },
+                { html: "Pages Archive" },
+                { html: "Source" },
+                { html: "Free Will" }
+              ]
+            },
+            { 
+              html: "Games",
+              link: "quads[0].cells[2]",
+              cells: [
+                { html: "stretch silo" },
+                { html: "nest egg" },
+                { html: "parcel toss" },
+                { html: "mesothelae" }
+              ]
+            },
+            { 
+              html: "Videos" 
+            },
+            {
+              html: "Art" // music
+            }
+          ]
+        }
+      ]
+    },
+    {},
+    {},
+    {}
+  ]
+  var lastQuad
+  var quad
+
+  $(document).ready(function() {
+
+    lastQuad = quads[0] // url params
+    quad = quads[0]
+
+    Quad(quad)
+  })
+
+  function Quad(q) {
+    let $quad = $('#quad')
+    // document width
+    let width = $quad.width()
+
+    let html = ''
+    for (let i = 0; i < q.cells.length; i++) {
+      let cell = q.cells[i]
+      html += '<div class="cell" onclick="Quad('+ cell.link +')" style="background-image: url('+ cell.img +'); height: '+ width / 2 +'px">'
+      html += '' + cell.html
+      html += '</div>'
+    }
+    html += '<div id="back" onclick="Quad(quad)">back</div>'
+    $quad.html(html)
+
+    lastQuad = $.extend({}, quad)
+    quad = $.extend({}, q)
+  }
+  //   transform: scale(.5);
+  // render all html at once and use css transform scale for navigation
+  // see the fractal
+</script>
+
+<style>
+  #quad {
+    display: grid;
+    /* height: 800px; */
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    position: relative;
+  }
+
+  .cell {
+    border: 1px solid #000;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #back {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin: auto;
+    background-color: rgb(128, 128, 128);
+    color: white;
+    border: 1px solid black;
+    line-height: 64px;
+    user-select: none;
+    cursor: pointer;
+  }
+
+  @media screen and (max-width: 800px) {
+    body {
+      padding-top: 50%;
+    }
+  }
+</style>
