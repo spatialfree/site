@@ -351,7 +351,7 @@ textarea {
   height: 200px;
   background-size: cover;
   background-position: center;
-  margin-bottom: 6rem;
+  margin-bottom: 8rem;
   position: relative;
 }
 .project-vid {
@@ -385,7 +385,8 @@ textarea {
   padding: 0 1rem;
 }
 .project-power {
-  text-align: right;
+  text-align: left;
+  padding: 0.5rem 1rem;
 }
 #calender {
 	display: flex;
