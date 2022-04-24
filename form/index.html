@@ -41,7 +41,7 @@
     notes<br>
     <textarea name="message" rows="4"></textarea><br>
     <a href="/policy" target="_blank">attendance policy</a><br><br>
-    <input type="hidden" name="accessKey" value="8185dd6e-7902-46f0-9c2e-edf845220b3e">
+    <input type="hidden" name="accessKey" value="825356ca-d586-418b-9e7c-899044998d39">
     <input type="hidden" name="replyTo" value="@">
     <input type="text" name="honeypot" style="display: none;">
     <input type="hidden" name="redirectTo" value="https://ethanmerchant.com/ty">
@@ -55,14 +55,18 @@
   const dotw = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']
 	
 	const clients = [
-    { name:"jared", 
+    { name:'jared', 
       sessions:32, streak:12, 
       times:[{day:5, hour:5}, {day:5, hour:6}]
     },
-    { name:"dallin", 
+    { name:'dallin', 
       sessions:1, streak:2, 
       times:[{day:0, hour:6}]
     },
+    { name:'jacob',
+      sessions:1, streak:1,
+      times:[{day:6, hour:4}]
+    }
   ]
 
 	$(document).ready(function() {

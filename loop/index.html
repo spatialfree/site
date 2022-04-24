@@ -1,0 +1,77 @@
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/style.css?v10">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="/include/includer.js?v10"></script>
+</head>
+
+<body style="display: flex; flex-flow: column; justify-content: center; align-items: center;">
+  <div class="l1" id="in">in</div>
+  
+  <div>tomato (25 on 5 off)</div>
+  <div>me
+    <input type="text" onfocusin="set(this)" onfocusout="store(this, 0)" autocomplete="off" >
+  </div>
+  <div>we
+    <input type="text" onfocusin="set(this)" onfocusout="store(this, 1)" autocomplete="off">
+  </div>
+  <div>ve
+    <input type="text" onfocusin="set(this)" onfocusout="store(this, 2)" autocomplete="off">
+  </div>
+  
+  <div>median</div>
+  
+  <div>plum (25 on 5 off)</div>
+  <div>free
+    <input type="text" onfocusin="set(this)" onfocusout="store(this, 3)" autocomplete="off">
+  </div>
+  <div>fuel
+    <input type="text" onfocusin="set(this)" onfocusout="store(this, 4)" autocomplete="off">
+  </div>
+  <div>fade
+    <input type="text" onfocusin="set(this)" onfocusout="store(this, 5)" autocomplete="off">
+  </div>
+  
+  <div class="l1" id="out">out</div>
+  <h1>loop</h1>
+</body>
+
+<script>
+  $(document).ready(function() {
+    $inputs = $('input');
+    for (var i = 0; i < $inputs.length; i++) {
+      $inputs[i].value = localStorage.getItem(i)
+    }
+  })
+
+  function set(el) {
+    // set border color green
+    el.style.borderColor = 'green';
+  }
+  
+  function store(el, index) {
+    el.style.borderColor = '#c0c0c0'
+
+    var val = el.value;
+    localStorage.setItem(index, val)
+  }
+</script>
+
+<style>
+  .l1 {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 1em;
+    padding: 0.5em 1em;
+  }
+
+  #in {
+    color: var(--dark);
+    background-color: var(--light);
+  }
+
+  #out {
+    color: var(--light);
+    background-color: var(--dark);
+  }
+</style>
