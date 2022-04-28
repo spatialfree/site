@@ -33,9 +33,9 @@ h2 {
   color: var(--light);
 }
 h3 {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 500;
-  margin-bottom: 0.25rem;
+  margin: 0.5rem 0;
   color: var(--black);
 }
 p {
@@ -48,6 +48,11 @@ p {
 }
 div {
   color: var(--black);
+}
+sub {
+  font-family: monospace;
+  font-size: medium;
+  color: var(--light);
 }
 @font-face {
   font-family: "IBM";
@@ -202,6 +207,23 @@ textarea {
 }
 .row2column .vid {
   padding-bottom: 28.125%;
+}
+.tile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-grow: 1;
+}
+.tile h2 {
+  color: white;
+}
+.tileimg {
+  width: 64px;
+  height: 64px;
+  background-size: cover;
+  margin-bottom: 1rem;
 }
 .btn {
 	margin: 1rem auto;
@@ -447,6 +469,15 @@ textarea {
   }
   .row2column .vid {
     padding-bottom: 56.25%;
+  }
+  .tile {
+    border-bottom: 1px solid #666;
+    margin-bottom: 1rem;
+    width: 200px;
+  }
+  .tileimg {
+    width: 128px;
+    height: 128px;
   }
   .spacer {
     display: none;
