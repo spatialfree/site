@@ -8,10 +8,10 @@
   <link rel="manifest" href="/favicon/site.webmanifest">
 	<meta name="description" content="">
 	<meta name="author" content="Ethan Merchant">
-	<title>form | tech tutoring</title>
+	<title>form</title>
   <link rel="stylesheet" href="/style.css?v6">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
   <script src="/include/includer.js?v6"></script>
 </head>
 
@@ -19,13 +19,12 @@
   <div id="nav"></div>
   <br>
 	<h1>form</h1>
-  <div id="sfc9x3p9zyk136w2y9743d6lu7qu4ftazy8"></div>
   <ol>
     <li>select client name (new or pre-existing)</li>
     <li>mark desired time(s) on calender</li>
     <li>fill out the rest as needed and submit</li>
   </ol>
-  <form action="https://api.staticforms.xyz/submit" method="post">
+  <form id="short-form" action="https://api.staticforms.xyz/submit" method="post">
     calender (EST pm)</br>
     <div id="calender"></div><br>
     client: <select name="$client" id="client" onchange="clientSelect(this)"></select><br><br>
@@ -43,21 +42,41 @@
     notes<br>
     <textarea name="message" rows="4"></textarea><br>
     <a href="/policy" target="_blank">attendance policy</a><br><br>
+
     <input type="hidden" name="accessKey" value="825356ca-d586-418b-9e7c-899044998d39">
     <input type="hidden" name="replyTo" value="@">
     <input type="text" name="honeypot" style="display: none;">
     <input type="hidden" name="redirectTo" value="https://ethanmerchant.com/ty">
     
-    <div class="g-recaptcha" data-sitekey="6Lcew6wfAAAAANv6YG7NVDJHAPpyC-XNbbtYmp2w"></div>
-    <input type="submit" value="submit" />
+    <div id="captcha"></div>
+    <div id="submit-button"></div>
   </form>
   <br><br>
   <div id="footer"></div>
 </body>
 
 <script>
-  function onSubmit(token) {
-    document.getElementById("demo-form").submit();
+  // var frmvalidator = new Validator('contactform')
+  // frmvalidator.addValidation('name','req','Please provide your name')
+
+  var verifyCallback = function(response) {
+    // console.log(response);
+    if (response) {
+      setTimeout(myCallback, 1000)
+    }
+  }
+
+  function myCallback() {
+    $('#submit-button').html(`<input type="submit" value="submit">`)
+    $('#captcha').hide()
+  }
+
+  var onloadCallback = function() {
+    grecaptcha.render('captcha', {
+      'sitekey': '6Lcew6wfAAAAANv6YG7NVDJHAPpyC-XNbbtYmp2w',
+      'callback': verifyCallback,
+      'theme': 'dark'
+    })
   }
 
   const dotw = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']
