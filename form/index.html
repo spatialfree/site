@@ -1,16 +1,17 @@
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
   <link rel="manifest" href="/favicon/site.webmanifest">
-	<meta name="description" content="">
-	<meta name="author" content="Ethan Merchant">
-	<title>form</title>
+  <meta name="description" content="">
+  <meta name="author" content="Ethan Merchant">
+  <title>form</title>
   <link rel="stylesheet" href="/style.css?v6">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
   <script src="/include/includer.js?v6"></script>
 </head>
@@ -18,7 +19,7 @@
 <body>
   <div id="nav"></div>
   <br>
-	<h1>form</h1>
+  <h1>thee</h1>
   <ol>
     <li>select client name (new or pre-existing)</li>
     <li>mark desired time(s) on calender</li>
@@ -41,25 +42,45 @@
     <span style="font-style: italic;">*payments are invoiced</span><br><br><br> -->
     notes<br>
     <textarea name="message" rows="4"></textarea><br>
-    <a href="/policy" target="_blank">attendance policy</a><br><br>
+    <!-- <a href="/policy" target="_blank">attendance policy</a><br><br> -->
 
     <input type="hidden" name="accessKey" value="825356ca-d586-418b-9e7c-899044998d39">
     <input type="hidden" name="replyTo" value="@">
     <input type="text" name="honeypot" style="display: none;">
     <input type="hidden" name="redirectTo" value="https://ethanmerchant.com/ty">
-    
+
     <div id="captcha"></div>
     <div id="submit-button"></div>
   </form>
+  <div onclick="notifyMe()" class="btn">notify</div>
   <br><br>
   <div id="footer"></div>
 </body>
 
 <script>
-  // var frmvalidator = new Validator('contactform')
-  // frmvalidator.addValidation('name','req','Please provide your name')
+  function notifyMe() {
+    console.log("notify");
+    let promise = Notification.requestPermission();
+    // // Let's check if the browser supports notifications
+    // if (!("Notification" in window)) {
+    //   alert("This browser does not support desktop notification")
+    // } // Let's check whether notification permissions have already been granted
+    // else if (Notification.permission === "granted") {
+    //   // If it's okay let's create a notification
+    //   var notification = new Notification("Hi there!")
+    // } // Otherwise, we need to ask the user for permission
+    // else if (Notification.permission !== "denied") {
+    //   Notification.requestPermission().then(function (permission) {
+    //     // If the user accepts, let's create a notification
+    //     if (permission === "granted") {
+    //       var notification = new Notification("Hi there!")
+    //     }
+    //   })
+    // }
+  }
 
-  var verifyCallback = function(response) {
+  // captcha
+  var verifyCallback = function (response) {
     // console.log(response);
     if (response) {
       setTimeout(myCallback, 1000)
@@ -71,7 +92,7 @@
     $('#captcha').hide()
   }
 
-  var onloadCallback = function() {
+  var onloadCallback = function () {
     grecaptcha.render('captcha', {
       'sitekey': '6Lcew6wfAAAAANv6YG7NVDJHAPpyC-XNbbtYmp2w',
       'callback': verifyCallback,
@@ -80,27 +101,71 @@
   }
 
   const dotw = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']
-	
-	const clients = [
-    { name:'jared', 
-      sessions:32, streak:12, 
-      times:[{day:5, hour:5}, {day:5, hour:6}]
+
+  const clients = [
+    {
+      name: 'jared',
+      sessions: 0, streak: 0,
+      times: [{ day: 5, hour: 5 }, { day: 5, hour: 6 }]
     },
-    { name:'dallin', 
-      sessions:1, streak:2, 
-      times:[{day:0, hour:6}]
+    {
+      name: 'niko',
+      sessions: 0, streak: 0,
+      times: [{ day: 4, hour: 5 }, { day: 4, hour: 6 }]
     },
-    { name:'jacob',
-      sessions:1, streak:1,
-      times:[{day:6, hour:4}]
+    {
+      name: 'nova',
+      sessions: 0, streak: 0,
+      times: [{ day: 1, hour: 5 }, { day: 1, hour: 6 }]
     },
-    { name:'zen',
-      sessions:1, streak:0,
-      times:[{day:2, hour:4}]
+    {
+      name: 'dallin',
+      sessions: 0, streak: 0,
+      times: [{ day: 0, hour: 6 }]
+    },
+    {
+      name: 'mariah',
+      sessions: 0, streak: 0,
+      times: [{ day: 5, hour: 4 }]
+    },
+    {
+      name: 'miranda',
+      sessions: 0, streak: 0,
+      times: [{ day: 4, hour: 4 }]
+    },
+    {
+      name: 'jacob',
+      sessions: 0, streak: 0,
+      times: [{ day: 6, hour: 4 }]
+    },
+    {
+      name: 'zen',
+      sessions: 0, streak: 0,
+      times: [{ day: 2, hour: 4 }]
+    },
+    {
+      name: 'bryan',
+      sessions: 0, streak: 0,
+      times: [{ day: 6, hour: 5 }, { day: 6, hour: 6 }]
+    },
+    {
+      name: 'michael',
+      sessions: 0, streak: 0,
+      times: [{ day: 0, hour: 4 }]
+    },
+    {
+      name: 'nathan',
+      sessions: 0, streak: 0,
+      times: [{ day: 1, hour: 4 }, { day: 3, hour: 5 }]
+    },
+    {
+      name: 'sanjit',
+      sessions: 0, streak: 0,
+      times: [{ day: 0, hour: 5 }]
     }
   ]
 
-	$(document).ready(function() {
+  $(document).ready(function () {
     let html = ""
     html += `<option value="new">new</option>`
     for (let i = 0; i < clients.length; i++) {
@@ -109,7 +174,7 @@
     $("#client").html(html)
 
     clientSelect(document.getElementById("client"))
-	})
+  })
 
   var client
   function clientSelect(el) {
@@ -124,7 +189,7 @@
     `
     if (client == "new") {
       $("#new-client").show()
-      
+
     } else {
       $("#new-client").hide()
       for (s of clients) {
@@ -140,21 +205,24 @@
     calender()
   }
 
-	function calender() {
-		let html = ""
+  function calender() {
+    const d = new Date()
+    let day = d.getDay()
+    let html = ""
     for (let i = 0; i < dotw.length; i++) {
       html += `<div class="day">`
-      html += `<div class="date">&nbsp;${dotw[i]}</div>`
+      let style = i == day ? 'color: var(--white);' : ''
+      html += `<div class="date" style="${style}">&nbsp;${dotw[i]}</div>`
       html += `<div class="hours">`
-      html += `<label class="check">4<input type="checkbox" ${status(i, 4)} name="$${dotw[i]+4}"><span class="checkmark"></span></label>`
-      html += `<label class="check">5<input type="checkbox" ${status(i, 5)} name="$${dotw[i]+5}"><span class="checkmark"></span></label>`
-      html += `<label class="check">6<input type="checkbox" ${status(i, 6)} name="$${dotw[i]+6}"><span class="checkmark"></span></label>`
+      html += `<label class="check">4<input type="checkbox" ${status(i, 4)} name="$${dotw[i] + 4}"><span class="checkmark"></span></label>`
+      html += `<label class="check">5<input type="checkbox" ${status(i, 5)} name="$${dotw[i] + 5}"><span class="checkmark"></span></label>`
+      html += `<label class="check">6<input type="checkbox" ${status(i, 6)} name="$${dotw[i] + 6}"><span class="checkmark"></span></label>`
       html += `</div>`
       html += `</div>`
     }
-    
-		$('#calender').html(html)
-	}
+
+    $('#calender').html(html)
+  }
 
   function status(day, hour) {
     for (let i = 0; i < clients.length; i++) {
@@ -171,4 +239,5 @@
     return "";
   }
 </script>
+
 </html>

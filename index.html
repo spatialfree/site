@@ -10,44 +10,44 @@
 	<meta name="description" content="Third generation software developer and tech optimist. This site is a central hub for all my work, ideas, and services:">
 	<meta name="author" content="Ethan Merchant">
 	<title>Ethan Merchant</title>
-  <link rel="stylesheet" href="/style.css?v11">
+  <link rel="stylesheet" href="/style.css?v13">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-  <script src="/include/includer.js?v11"></script>
+  <script src="/include/includer.js?v13"></script>
 </head>
 
 <body>
-  <!-- <model-viewer src="/res/gabe.glb" camera-controls style="position: absolute; right: 0; width: 200px;"></model-viewer> -->
-  <img class="profile-pic" src="/res/profile-pic.png">
-  <div class="stripe">
-    <a class="quick-link" href="/loop" style="border: none;">&orarr;</a>
+  <div style="margin: 0; text-align: center;">
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7981243&style=0007&nbdigits=8&type=page&initCount=0" />
   </div>
-  
-  <a class="quick-link" id="email" href="mailto:mail@ethanmerchant.com" target="blank" title="email" >
-    <!-- <img src="/res/email-icon.svg"> -->
-    @
-    <!-- <div>mail@ethanmerchant.com</div> -->
-  </a>
+  <!-- <model-viewer src="/res/gabe.glb" camera-controls style="position: absolute; right: 0; width: 200px;"></model-viewer> -->
+  <!-- <img class="profile-pic" src="/res/profile-pic.png"> -->
+  <!-- <div class="stripe">
+    <div style="width: 800px; margin: 0 auto; text-align: right;">
+      <a href="/loop">loop</a>
+      <a href="/x">&times;</a>
+      <a href="/x">dofs</a>
+    </div>
+  </div> -->
+  <br><br>
+  <img src="/res/float-pen-letters.png" width="33%" style="margin: 0 auto; display: block;">
+  <br><br>
   <h1 style="margin-bottom: 0;">Ethan Merchant</h1>
-  <h2>spatialfree</h2>
+  <h2>@spatialfree</h2>
   <br>
-  <p>Third generation software developer and tech optimist. This site is a central hub for all my work, ideas, and services:</p>
-  <pre>
+  <p>Third generation software developer and tech optimist. This site is a central hub for all my work, ideas, and services</p>
+
+  <pre style="margin-bottom: 0; border-radius: 2px 2px 0 0;">
 <div style="background-image: url(/res/cube.gif);
   width: 48px;
   height: 48px;
   background-size: 320px;
   background-position: center;
-  mix-blend-mode: screen;"></div>
-oriels 
-<sub>v0.0.103  
-&#169;2018-22 dofdev</sub>
+  mix-blend-mode: screen;
+  float: left;"></div>  Oriels<br><span style="color: var(--gray);">  v0.0.103<br>  &#169;2018-22 dofdev</span>
 
 <span id='commits'></span>
 </pre>
-<div style="float: right;">
-  <img src="https://hitwebcounter.com/counter/counter.php?page=7981243&style=0007&nbdigits=8&type=page&initCount=0"/>
-</div>
 
   <script>
     var url = 'https://api.github.com/repos/dofdev/oriels/commits/main';
@@ -56,105 +56,89 @@ oriels
       url: url,
       success: function (data) {
         let html = '';
-        html += '"' + data.commit.message + '"</br>'
-        html += '<sub>'
+        let commit = data.commit.message
+        html += '"' + commit + '"</br>'
+        html += '<span style="color: var(--gray);">'
         html += data.stats.additions + '+ '
         html += data.stats.deletions + '-  '
         html += data.commit.author.date.slice(0, 10)
-        html += '</sub></br><br>'
+        html += '</span><br>'
         $('#commits').html(html)
         // console.log(data)
       }
     })
   </script>
-  <br>
-  <div style="margin: 1rem;">
-    <a href="/devsupport" title="dev support" class="link">
-      <div class="row"><img src="/res/tutoring-icon.svg"><div>dev support</div></div>
-      <div class="link-desc">are you stuck on an issue or starting a new project?</div>
-    </a>
-    <a href="https://dofdev.org" target="blank" title="dofdev" class="link">
-      <div class="row"><img src="/res/dofdev-icon.svg"><div>dofdev</div></div>
-      <div class="link-desc">the engineer for an innovative XR interaction endeavor</div>
-    </a>
-    <a href="https://twitter.com/spatialfree" target="blank" title="twitter" class="link">
-      <div class="row"><img src="/res/twitter-icon.svg"><div>twitter</div></div>
-      <div class="link-desc">connecting with peers</div>
-    </a>
-    <a href="https://linkedin.com/in/ethanmerchant" target="blank" title="linkedin" class="link">
-      <div class="row"><img src="/res/linkedin-icon.svg"><div>linkedin</div></div>
-      <div class="link-desc">necessary nepotism ^-^</div>
-    </a>
-    <a href="https://github.com/spatialfree" target="blank" title="github" class="link">
-      <div class="row"><img src="/res/github-icon.svg"><div>github</div></div>
-      <div class="link-desc">public and private codebases</div>
-    </a>
-    <a href="https://spatialfree.itch.io/" target="blank" title="itchio" class="link">
-      <div class="row"><img src="/res/itchio-icon.svg"><div>itch.io</div></div>
-      <div class="link-desc">14+ game jams</div>
-    </a>
-    <a href="https://scratch.mit.edu/users/ethanwm/" target="blank" title="scratch" class="link">
-      <div class="row"><img src="/res/scratch-icon.svg"><div>scratch</div></div>
-      <div class="link-desc">nostalgic game engine</div>
-    </a>    
-    <a href="/notebook/?page=0" title="notebook" class="link">
-      <div class="row"><img src="/res/notebook-icon.svg"><div>notebook</div></div>
-      <div class="link-desc">ideas that kept me up at night</div>
-    </a>
+
+  <div class="row row2column">
+    <div class="vid" style="margin-bottom: 0;">
+      <iframe src="https://www.youtube.com/embed/videoseries?list=PL4kX1NZYrglCkVPSLQ_U8alkIbTb7wBba"
+        style="border-radius: 0 0 2px 2px;" title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    </div>
   </div>
 
-  <!-- <div class="row2column" style="display: flex; text-align:center;">
-    <a href="/notebook" title="public notebook">
-      <div class="panel">
-        <div class="panel-img" style="background-image: url(/res/flexible-grid.gif);"></div>
-        <h2>notebook</h2>
-        <svg viewBox="0 0 640 512" class="svg-inline" style="height: 64px;">
-          <path fill="currentColor"
-          d="M208 352c-2.39 0-4.78.35-7.06 1.09C187.98 357.3 174.35 360 160 360c-14.35 0-27.98-2.7-40.95-6.91-2.28-.74-4.66-1.09-7.05-1.09C49.94 352-.33 402.48 0 464.62.14 490.88 21.73 512 48 512h224c26.27 0 47.86-21.12 48-47.38.33-62.14-49.94-112.62-112-112.62zm-48-32c53.02 0 96-42.98 96-96s-42.98-96-96-96-96 42.98-96 96 42.98 96 96 96zM592 0H208c-26.47 0-48 22.25-48 49.59V96c23.42 0 45.1 6.78 64 17.8V64h352v288h-64v-64H384v64h-76.24c19.1 16.69 33.12 38.73 39.69 64H592c26.47 0 48-22.25 48-49.59V49.59C640 22.25 618.47 0 592 0z"
-          class=""></path>
-        </svg><br><br>
-        <p>a legible distilled down copy of my notes. *not a blog</p>
-      </div>
-    </a>
-    <div class='spacer'></div>
-    <a href="/tutoring">
-      <div class="panel">
-        <div class="panel-img" style="background-image: url(/res/hive.gif);"></div>
-        <h2>tutoring</h2>
-        <svg viewBox="0 0 512 512" class="svg-inline" style="height: 64px;">
-          <path fill="currentColor"
-          d="M352 96c0-53.02-42.98-96-96-96s-96 42.98-96 96 42.98 96 96 96 96-42.98 96-96zM233.59 241.1c-59.33-36.32-155.43-46.3-203.79-49.05C13.55 191.13 0 203.51 0 219.14v222.8c0 14.33 11.59 26.28 26.49 27.05 43.66 2.29 131.99 10.68 193.04 41.43 9.37 4.72 20.48-1.71 20.48-11.87V252.56c-.01-4.67-2.32-8.95-6.42-11.46zm248.61-49.05c-48.35 2.74-144.46 12.73-203.78 49.05-4.1 2.51-6.41 6.96-6.41 11.63v245.79c0 10.19 11.14 16.63 20.54 11.9 61.04-30.72 149.32-39.11 192.97-41.4 14.9-.78 26.49-12.73 26.49-27.06V219.14c-.01-15.63-13.56-28.01-29.81-27.09z"
-          class=""></path>
-        </svg><br><br>
-        <p>learn how to navigate the waves of technological advancement with one on one tutoring...</p>
-      </div>
-    </a>
-  </div> -->
-
-  <!-- <div style="display: flex; flex-flow: column;">
-    <div style="height: 256px; background-image: url(/res/flexible-grid.gif); flex-grow: 1; background-size: cover; background-position: center;"></div>
-    <div style="height: 256px; background-image: url(/res/cube.gif); flex-grow: 1; background-size: cover; background-position: center;"></div>
-    <div style="height: 256px; background-image: url(/res/hive.gif); flex-grow: 1; background-size: cover; background-position: center;"></div>
-  </div> -->
-  <br>
-  <div class="vid">
-    <iframe src="https://www.youtube.com/embed/videoseries?list=PL4kX1NZYrglCkVPSLQ_U8alkIbTb7wBba"
-    title="YouTube video player" frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen></iframe>
+  <div class="row">
+    <a href="https://dofdev.org"><div class="icon" style="background-image: url(/res/dofdev-icon.svg)"></div></a>
+    <a href="https://twitter.com/spatialfree"><div class="icon" style="background-image: url(/res/twitter-icon.svg)"></div></a>
+    <a href="https://linkedin.com/in/ethanmerchant"><div class="icon" style="background-image: url(/res/linkedin-icon.svg)"></div></a>
   </div>
 
-  <!-- <div class="project" style="background-image: url(/res/mesothelae.mp4)">empty cave</div> -->
+  <!-- <div class="row">
+    <div class="tile">
+      <a href="/form" title="form">
+        <div class="tileimg" style="background-image: url(/res/tutoring-icon.svg)"></div>
+      </a>
+      <h2>meetup</h2>
+      <p>reserve one off and recuring professional tech related sessions</p>
+      // represent things that have and are happening with that *show value
+    </div>
+  </div>
+
+  <div class="tile">
+    <a href="https://dofdev.org" target="blank" title="dofdev">
+      <div class="tileimg" style="background-image: url(/res/dofdev-icon.svg)"></div>
+    </a>
+    <h2>dofdev</h2>
+    <p>the engineer for an innovative XR interaction endeavor</p>
+  </div>
+
+  <h1>Relevant Links</h1>
+  <p>It's easier to navigate when there is some context. Here are some personally important links</p>
+  <br>
+  <div style="margin: 1rem;" class="row row2column">
+    <div class="tile">
+      <a href="https://twitter.com/spatialfree" target="blank" title="twitter">
+        <div class="tileimg" style="background-image: url(/res/twitter-icon.svg)"></div>
+      </a>
+      <h2>twitter</h2>
+      <p>connecting with peers</p>
+    </div>
+    <div class="tile">
+      <a href="https://linkedin.com/in/ethanmerchant" target="blank" title="linkedin">
+        <div class="tileimg" style="background-image: url(/res/linkedin-icon.svg)"></div>
+      </a>
+      <h2>linkedin</h2>
+      <p>necessary nepotism ^-^</p>
+    </div>
+  </div>
+  <br><br><br>
+
+  <h1>Engines</h1>
+  <p>These </p> -->
+
+  <br><br>
+
   <div id="scroller" style="position: absolute; height: 4px; width: 12px; background-color: white; z-index: 100; mix-blend-mode: difference;"></div>
 
-  <a href="https://www.newgrounds.com/portal/view/827345" target="blank">
+  <!-- <a href="https://www.newgrounds.com/portal/view/827345" target="blank">
     <div class="project">
       <video autoplay muted loop class="project-vid">
         <source src="/res/nest-egg.mp4" type="video/mp4">
       </video>
       <div class="project-txt">nest egg</div>
       <div class="project-year">2022</div>
-      <div class="project-power">original arcade game designed around human psychology</div>
+      <div class="project-power"><span class="high">original</span> arcade game designed around human psychology</div>
     </div>
   </a>
   
@@ -165,9 +149,9 @@ oriels
       </video>
       <div class="project-txt">pyronesia</div>
       <div class="project-year">2021</div>
-      <div class="project-power">dynamic procedural meshes & fluid dynamics</div>
+      <div class="project-power"><span class="high">dynamic</span> procedural meshes & fluid dynamics</div>
     </div>
-  </a>
+  </a> -->
   
   <a href="https://www.newgrounds.com/portal/view/773241" target="blank">
     <div class="project">
@@ -176,18 +160,40 @@ oriels
       </video>
       <div class="project-txt">empty cave</div>
       <div class="project-year">2020</div>
-      <div class="project-power">the hero's journey told gameplay</div>
+      <div class="project-power">the hero's journey <span class="high">told through gameplay</span></div>
     </div>
   </a>
 
-  <a href="https://spatialfree.itch.io/parcel-toss" target="blank">
+  <a href="https://dofdev.org/snakeinabox/" target="blank">
+    <div class="project">
+      <video autoplay muted loop class="project-vid">
+        <source src="/res/snakeinabox.mp4?v13" type="video/mp4">
+      </video>
+      <div class="project-txt">snake in a box</div>
+      <div class="project-year">2019</div>
+      <div class="project-power">classic snake <span class="high">realized spatially</span> from the ground up</div>
+    </div>
+  </a>
+
+  <a href="https://github.com/dofdev/oriels" target="blank">
+    <div class="project">
+      <video autoplay muted loop class="project-vid">
+        <source src="/res/oriels.mp4" type="video/mp4">
+      </video>
+      <div class="project-txt">oriels</div>
+      <div class="project-year">2022</div>
+      <div class="project-power">a <span class="high">dof</span> driven space</div>
+    </div>
+  </a>
+
+  <!-- <a href="https://spatialfree.itch.io/parcel-toss" target="blank">
     <div class="project">
       <video autoplay muted loop class="project-vid">
         <source src="/res/parcel-toss.mp4" type="video/mp4">
       </video>
       <div class="project-txt">parcel toss</div>
       <div class="project-year">2019</div>
-      <div class="project-power">generative gameplay with custom pathfinding</div>
+      <div class="project-power"><span class="high">generative</span> gameplay with custom pathfinding</div>
     </div>
   </a>
 
@@ -198,18 +204,7 @@ oriels
       </video>
       <div class="project-txt">stretch silo</div>
       <div class="project-year">2018</div>
-      <div class="project-power">first dof discovered: the &deg;stretch-cursor</div>
-    </div>
-  </a>
-  
-  <a href="https://spatialfree.itch.io/mesothelae" target="blank">
-    <div class="project">
-      <video autoplay muted loop class="project-vid">
-        <source src="/res/mesothelae.mp4" type="video/mp4">
-      </video>
-      <div class="project-txt">mesothelae</div>
-      <div class="project-year">2018</div>
-      <div class="project-power">persistent physics based first person web swinging</div>
+      <div class="project-power"><span class="high">discovered</span> my first dof: the &deg;stretch-cursor</div>
     </div>
   </a>
 
@@ -220,7 +215,7 @@ oriels
       </video>
       <div class="project-txt">antimony</div>
       <div class="project-year">2017</div>
-      <div class="project-power">local co-op pvp with realtime power management</div>
+      <div class="project-power">local co-op pvp with <span class="high">realtime power management</span></div>
     </div>
   </a>
   
@@ -231,28 +226,37 @@ oriels
       </video>
       <div class="project-txt">vector dream</div>
       <div class="project-year">2016</div>
-      <div class="project-power">first unity gamejam!</div>
+      <div class="project-power"><span class="high">first</span> unity gamejam!</div>
     </div>
-  </a>
+  </a> -->
 
-  <br>
   <div class="row row2column">
     <div class="tile">
       <div class="tileimg" style="background-image: url(/res/scratch-icon.svg)"></div>
       <h2>Scratch<br><sub>[ 2008 ]</sub></h2>
-      <h3>52+</h3>
     </div>
-    <div>&nbsp;&nbsp;&nbsp;</div>
     <div class="tile">
       <div class="tileimg" style="background-image: url(/res/unity-icon.svg)"></div>
       <h2>Unity<br><sub>[ 2016 ]</sub></h2>
-      <h3>14+</h3>
     </div>
-    <div>&nbsp;&nbsp;&nbsp;</div>
     <div class="tile">
       <div class="tileimg" style="background-image: url(/res/stereokit-icon.svg)"></div>
       <h2>StereoKit<br><sub>[ 2022 ]</sub></h2>
-      <h3>1+</h3>
+    </div>
+  </div>
+  <br><br><br><br>
+
+  <div style="padding-left: 1rem; display: flex; flex-flow: column;">
+    <h1 class="fancy">Notebook</h1>
+    <p>Ideas that kept me up late at night until I sat down and formalized them</p>
+    <div class="row" style="align-items: start;">
+      <!-- <div class="tileimg" style="background-image: url(/res/notebook-icon.svg); margin-left: 1rem;"></div> -->
+      <img src="/res/notebook-icon.svg" style="width: 128px; margin-bottom: 1rem;">
+      <div class="mobile-center">
+        <h2>Pseudo code</h2>
+        <p>An approachable and portable notation for systems.</p>
+        <a href="/notebook/?page=1"><div class="btn" style="margin: 1rem; width: 128px;">jump to page</div></a>
+      </div>
     </div>
   </div>
 

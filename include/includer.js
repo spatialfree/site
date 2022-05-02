@@ -6,7 +6,7 @@ $(document).ready(function () {
   nav += `</div>`
 
   $('#nav').html(nav);
-  $('#footer').html('<sub>&copy; 2022 Ethan Merchant</sub>');
+  $('#footer').html('&copy; 2022 Ethan Merchant');
   $('.project-vid').each(function () {
     $(this).on('loadeddata', function() {
       var duration = $(this).prop('duration')
