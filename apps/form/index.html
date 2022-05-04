@@ -19,7 +19,7 @@
 <body>
   <div id="nav"></div>
   <br>
-  <h1>thee</h1>
+  <h1>form</h1>
   <ol>
     <li>select client name (new or pre-existing)</li>
     <li>mark desired time(s) on calender</li>
@@ -47,38 +47,16 @@
     <input type="hidden" name="accessKey" value="825356ca-d586-418b-9e7c-899044998d39">
     <input type="hidden" name="replyTo" value="@">
     <input type="text" name="honeypot" style="display: none;">
-    <input type="hidden" name="redirectTo" value="https://ethanmerchant.com/ty">
+    <input type="hidden" name="redirectTo" value="https://ethanmerchant.com/apps/form/ty">
 
     <div id="captcha"></div>
     <div id="submit-button"></div>
   </form>
-  <div onclick="notifyMe()" class="btn">notify</div>
   <br><br>
   <div id="footer"></div>
 </body>
 
 <script>
-  function notifyMe() {
-    console.log("notify");
-    let promise = Notification.requestPermission();
-    // // Let's check if the browser supports notifications
-    // if (!("Notification" in window)) {
-    //   alert("This browser does not support desktop notification")
-    // } // Let's check whether notification permissions have already been granted
-    // else if (Notification.permission === "granted") {
-    //   // If it's okay let's create a notification
-    //   var notification = new Notification("Hi there!")
-    // } // Otherwise, we need to ask the user for permission
-    // else if (Notification.permission !== "denied") {
-    //   Notification.requestPermission().then(function (permission) {
-    //     // If the user accepts, let's create a notification
-    //     if (permission === "granted") {
-    //       var notification = new Notification("Hi there!")
-    //     }
-    //   })
-    // }
-  }
-
   // captcha
   var verifyCallback = function (response) {
     // console.log(response);
@@ -162,6 +140,11 @@
       name: 'sanjit',
       sessions: 0, streak: 0,
       times: [{ day: 0, hour: 5 }]
+    },
+    {
+      name: 'paul',
+      sessions: 0, streak: 0,
+      times: [{ day: 3, hour: 4 }]
     }
   ]
 
@@ -237,6 +220,18 @@
       }
     }
     return "";
+  }
+
+  // hash function
+  function hash(str) {
+    var hash = 0, i, chr
+    if (str.length === 0) return hash
+    for (i = 0; i < str.length; i++) {
+      chr = str.charCodeAt(i)
+      hash = ((hash << 5) - hash) + chr
+      hash |= 0 // Convert to 32bit integer
+    }
+    return hash
   }
 </script>
 

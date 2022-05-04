@@ -244,6 +244,12 @@ textarea {
   background-position: center;
   margin: 1rem;
 }
+.hover-grow {
+  transition: 0.1s ease-out;
+}
+.hover-grow:hover {
+  transform: scale(1.1);
+}
 .btn {
 	margin: 1rem auto;
   margin-left: 1rem;
@@ -260,8 +266,9 @@ textarea {
   color: var(--black);
 }
 .btn:hover {
-	border-color: var(--white);
-	transition: 0.1s;
+  transition: 0.1s ease-out;
+	/* border-color: var(--white); */
+  color: var(--white);
 }
 .hook {
 	text-align: center;

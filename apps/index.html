@@ -1,0 +1,80 @@
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/style.css?v10">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="/include/includer.js?v10"></script>
+</head>
+
+<body>
+  <br><br>
+  <h1>apps</h1>
+  <div class="row">
+    <a href="mono" class="app">
+      <div>mono</div>
+    </a>
+    <a href="loop" class="app">
+      <div>loop</div>
+    </a>
+    <a href="form" class="app">
+      <div>form</div>
+    </a>
+    <a href="chat" class="app">
+      <div>chat</div>
+    </a>
+    <a href="random-month" class="app">
+      <div>rnd month</div>
+    </a>
+    <a href="devsupport" class="app">
+      <div>dev support</div>
+    </a>
+  </div>
+
+  <br><br><br>
+  <h2>dev notes</h2>
+  <pre>
+FORM:
+
+good
+fully custom
+ez to sign up
+
+
+bad
+no differentiation for one offs
+hard for me to scan quickly
+manual data entry
+manual notifications
+malicious actors can reschedule current clients
+
+
+there is a larger construct that this plays a role in:
+
+the loop
+
+day (loop)
+week (form)
+month (?)
+
+I'd like them to be nested
+
+  </pre>
+
+</body>
+
+
+<style>
+  .app {
+    width: 128px;
+    height: 128px;
+    background-color: var(--light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: all 0.1s ease-in-out;
+  }
+  .app:hover {
+    transform: scale(1.1);
+    outline: 1px solid var(--dark);
+  }
+</style>
