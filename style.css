@@ -244,6 +244,16 @@ textarea {
   background-position: center;
   margin: 1rem;
 }
+.engine {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+.engine-icon {
+  height: 48px; 
+  width: 48px; 
+  background-size: cover; 
+}
 .hover-grow {
   transition: 0.1s ease-out;
 }
@@ -441,18 +451,20 @@ textarea {
   user-select: none;
   pointer-events: none;
 }
-.project-year {
+.project-number {
   float: right;
-  background-color: black;
-  color: white;
+  background-color: var(--black);
+  color: var(--gray);
   width: fit-content;
-  padding: 0 1rem;
+  padding: 0.25rem 0.5rem;
+  font-size: smaller;
+  font-family: monospace;
 }
 .project-power {
   text-align: left;
   padding: 0.5rem 1rem;
 }
-#calender {
+#calendar {
 	display: flex;
 	flex-wrap: wrap;
 }
@@ -481,6 +493,11 @@ textarea {
 .high {
   color: var(--white);
   background-color: var(--color);
+}
+.high:after {
+  content: attr(data-end);
+  color: var(--black);
+  background-color: var(--light);
 }
 .fancy:first-letter {
   font-size: 112px;
@@ -514,6 +531,9 @@ textarea {
     flex-flow: column;
     justify-content: center;
     align-items: center;
+  }
+  .mobile-3quarter {
+    width: 75% !important;
   }
   .btn {
     margin: 1rem auto;

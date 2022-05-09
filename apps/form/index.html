@@ -14,33 +14,36 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
   <script src="/include/includer.js?v6"></script>
+  <script src="/weekly.js?v6"></script>
 </head>
 
 <body>
   <div id="nav"></div>
   <br>
-  <h1>form</h1>
+  <h1>Schedule</h1>
   <ol>
-    <li>select client name (new or pre-existing)</li>
-    <li>mark desired time(s) on calender</li>
-    <li>fill out the rest as needed and submit</li>
+    <li>mark desired time(s) on calendar</li>
+    <li>input contact details</li>
+    <li>write your context then submit the form</li>
   </ol>
+  <br>
   <form id="short-form" action="https://api.staticforms.xyz/submit" method="post">
-    calender (EST pm)</br>
-    <div id="calender"></div><br>
-    client: <select name="$client" id="client" onchange="clientSelect(this)"></select><br><br>
-    <div id="new-client">
-      name<br>
-      <input type="text" name="name" placeholder="client name"><br>
-      phone<br>
-      <input type="text" name="phone" placeholder="(206)782-8410"><br>
-      email<br>
-      <input type="text" name="email" placeholder="name@example.com"><br>
+    
+    Calendar (EST pm)</br>
+    <div id="calendar"></div>
+    <div style="display: flex; justify-content: center; margin-top: 1rem;">
+      <label class="check">&nbsp;repeat<input type="checkbox" name="$repeat" checked="true"><span class="checkmark"></span></label>
     </div>
-    <div id="current-client"></div>
-    <!-- + sessions: <select name="$sessions" id="sessions"></select><br>
-    <span style="font-style: italic;">*payments are invoiced</span><br><br><br> -->
-    notes<br>
+    <br>
+
+    Name<br>
+    <input type="text" name="name" placeholder="client name"><br>
+    Phone<br>
+    <input type="text" name="phone" placeholder="(206)782-8410"><br>
+    Email<br>
+    <input type="text" name="email" placeholder="name@example.com"><br>
+
+    Context<br>
     <textarea name="message" rows="4"></textarea><br>
     <!-- <a href="/policy" target="_blank">attendance policy</a><br><br> -->
 
@@ -78,117 +81,11 @@
     })
   }
 
-  const dotw = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']
-
-  const clients = [
-    {
-      name: 'jared',
-      sessions: 0, streak: 0,
-      times: [{ day: 5, hour: 5 }, { day: 5, hour: 6 }]
-    },
-    {
-      name: 'niko',
-      sessions: 0, streak: 0,
-      times: [{ day: 4, hour: 5 }, { day: 4, hour: 6 }]
-    },
-    {
-      name: 'nova',
-      sessions: 0, streak: 0,
-      times: [{ day: 1, hour: 5 }, { day: 1, hour: 6 }]
-    },
-    {
-      name: 'dallin',
-      sessions: 0, streak: 0,
-      times: [{ day: 0, hour: 6 }]
-    },
-    {
-      name: 'mariah',
-      sessions: 0, streak: 0,
-      times: [{ day: 5, hour: 4 }]
-    },
-    {
-      name: 'miranda',
-      sessions: 0, streak: 0,
-      times: [{ day: 4, hour: 4 }]
-    },
-    {
-      name: 'jacob',
-      sessions: 0, streak: 0,
-      times: [{ day: 6, hour: 4 }]
-    },
-    {
-      name: 'zen',
-      sessions: 0, streak: 0,
-      times: [{ day: 2, hour: 4 }]
-    },
-    {
-      name: 'bryan',
-      sessions: 0, streak: 0,
-      times: [{ day: 6, hour: 5 }, { day: 6, hour: 6 }]
-    },
-    {
-      name: 'michael',
-      sessions: 0, streak: 0,
-      times: [{ day: 0, hour: 4 }]
-    },
-    {
-      name: 'nathan',
-      sessions: 0, streak: 0,
-      times: [{ day: 1, hour: 4 }, { day: 3, hour: 5 }]
-    },
-    {
-      name: 'sanjit',
-      sessions: 0, streak: 0,
-      times: [{ day: 0, hour: 5 }]
-    },
-    {
-      name: 'paul',
-      sessions: 0, streak: 0,
-      times: [{ day: 3, hour: 4 }]
-    }
-  ]
-
   $(document).ready(function () {
-    let html = ""
-    html += `<option value="new">new</option>`
-    for (let i = 0; i < clients.length; i++) {
-      html += `<option value="${clients[i].name}">${clients[i].name}</option>`
-    }
-    $("#client").html(html)
-
-    clientSelect(document.getElementById("client"))
+    calendar()
   })
 
-  var client
-  function clientSelect(el) {
-    client = el.value;
-    let html = ""
-    let sessions = `
-      <option value="01">01 * $20/hr = $20</option>
-      <option value="04">04 * $19/hr = $76</option>
-      <option value="08">08 * $18/hr = $144</option>
-      <option value="16">16 * $17/hr = $272</option>
-      <option value="32">32 * $16/hr = $512</option>
-    `
-    if (client == "new") {
-      $("#new-client").show()
-
-    } else {
-      $("#new-client").hide()
-      for (s of clients) {
-        if (s.name == client) {
-          // html += `sessions remaining: ${s.sessions}<br>`
-          html += `attendance streak: ${s.streak}<br><br>`
-        }
-      }
-      sessions = `<option value="00">use remaining</option>` + sessions
-    }
-    $("#current-client").html(html)
-    $("#sessions").html(sessions)
-    calender()
-  }
-
-  function calender() {
+  function calendar() {
     const d = new Date()
     let day = d.getDay()
     let html = ""
@@ -204,34 +101,18 @@
       html += `</div>`
     }
 
-    $('#calender').html(html)
+    $('#calendar').html(html)
   }
 
   function status(day, hour) {
     for (let i = 0; i < clients.length; i++) {
       for (let j = 0; j < clients[i].times.length; j++) {
         if (clients[i].times[j].day == day && clients[i].times[j].hour == hour) {
-          if (clients[i].name == client) {
-            return "checked"
-          } else {
-            return "disabled"
-          }
+          return "disabled"
         }
       }
     }
     return "";
-  }
-
-  // hash function
-  function hash(str) {
-    var hash = 0, i, chr
-    if (str.length === 0) return hash
-    for (i = 0; i < str.length; i++) {
-      chr = str.charCodeAt(i)
-      hash = ((hash << 5) - hash) + chr
-      hash |= 0 // Convert to 32bit integer
-    }
-    return hash
   }
 </script>
 

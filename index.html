@@ -32,10 +32,10 @@
   <br><br>
   <img src="/res/float-pen-letters.png" width="33%" style="margin: 0 auto; display: block;">
   <br><br>
-  <h1 style="margin-bottom: 0;">Ethan Merchant</h1>
-  <h2>@spatialfree</h2>
+  <h1 class="mobile-center" style="margin-bottom: 0;">Ethan Merchant</h1>
+  <h2 class="mobile-center">@spatialfree</h2>
   <br>
-  <p>Third generation software developer and tech optimist. This site is a central hub for all my work, ideas, and services</p>
+  <p class="mobile-center">Third generation software developer and tech optimist. This site is a central hub for all my work, ideas, and services</p>
 
   <pre style="margin-bottom: 0; border-radius: 2px 2px 0 0;">
 <div style="background-image: url(/res/cube.gif);
@@ -73,7 +73,7 @@
     <div class="vid" style="margin-bottom: 0;">
       <iframe src="https://www.youtube.com/embed/videoseries?list=PL4kX1NZYrglCkVPSLQ_U8alkIbTb7wBba"
         style="border-radius: 0 0 2px 2px;" title="YouTube video player" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; shuffle"
         allowfullscreen></iframe>
     </div>
   </div>
@@ -86,42 +86,61 @@
 
   <br><br>
 
-  <div id="scroller" style="position: absolute; height: 4px; width: 12px; background-color: white; z-index: 100; mix-blend-mode: difference;"></div>
+  <div id="scroller" style="position: absolute; height: 4px; width: 12px; background-color: rgb(245, 245, 245); z-index: 100; mix-blend-mode: difference;"></div>
   
+
+  <div class="engine">
+    <a href="https://scratch.mit.edu/users/ethanwm/">
+      <div class="engine-icon hover-grow" style="background-image: url(/res/icons/scratch-icon.svg)"></div>
+    </a>
+    <h2>Scratch<br><sub>since 2008</sub></h2>
+  </div>
   <a href="https://www.newgrounds.com/portal/view/773241" target="blank">
     <div class="project">
       <video autoplay muted loop class="project-vid">
         <source src="/res/videos/empty-cave.mp4" type="video/mp4">
       </video>
       <div class="project-txt">empty cave</div>
-      <div class="project-year">2020</div>
-      <div class="project-power">the hero's journey <span class="high">told through gameplay</span></div>
+      <div class="project-number">#048</div>
+      <div class="project-power">the hero's journey <span class="high" data-end="y">told through gamepla</span></div>
     </div>
   </a>
 
+  <div class="engine">
+    <a href="https://spatialfree.itch.io/">
+      <div class="engine-icon hover-grow" style="background-image: url(/res/icons/unity-icon.svg)"></div>
+    </a>
+    <h2>Unity<br><sub>since 2016</sub></h2>
+  </div>
   <a href="https://dofdev.org/snakeinabox/" target="blank">
     <div class="project">
       <video autoplay muted loop class="project-vid">
         <source src="/res/videos/snakeinabox.mp4?v13" type="video/mp4">
       </video>
       <div class="project-txt">snake in a box</div>
-      <div class="project-year">2019</div>
-      <div class="project-power">classic snake <span class="high">realized spatially</span> from the ground up</div>
+      <div class="project-number">#011</div>
+      <div class="project-power">classic snake <span class="high" data-end="y">realized spatiall</span> from the ground up</div>
     </div>
   </a>
 
+  <div class="engine">
+    <a href="https://stereokit.net/">
+      <div class="engine-icon hover-grow" style="background-image: url(/res/icons/stereokit-icon.svg)"></div>
+    </a>
+    <h2>StereoKit<br><sub>since 2022</sub></h2>
+  </div>
   <a href="https://github.com/dofdev/oriels" target="blank">
     <div class="project">
       <video autoplay muted loop class="project-vid">
         <source src="/res/videos/oriels.mp4" type="video/mp4">
       </video>
       <div class="project-txt">oriels</div>
-      <div class="project-year">2022</div>
-      <div class="project-power">a space for developing <span class="high">dofs</span></div>
+      <div class="project-number">#001</div>
+      <div class="project-power">a space for developing <span class="high" data-end="s">dof</span></div>
     </div>
   </a>
 
-  <div class="row row2column">
+  <!-- <div class="row row2column">
     <div class="tile">
       <a href="https://scratch.mit.edu/users/ethanwm/">
         <div class="tileimg hover-grow" style="background-image: url(/res/icons/scratch-icon.svg)"></div>
@@ -140,25 +159,37 @@
       </a>
       <h2>StereoKit<br><sub>[ 2022 ]</sub></h2>
     </div>
-  </div>
-  <br><br><br><br>
+  </div> -->
+  <br><br>
 
-  <div style="padding-left: 1rem; display: flex; flex-flow: column;">
-    <h1 class="fancy">Notebook</h1>
-    <p>Ideas that kept me up late at night until I sat down and formalized them</p>
-    <div class="row" style="align-items: start;">
-      <a href="/notebook" class="hover-grow">
-        <img src="/res/icons/notebook-icon.svg" style="width: 128px; margin-bottom: 1rem;">
+  <div class="mobile-center">
+    <h1 class="fancy">Dataset&nbsp;&nbsp;</h1>
+  </div>
+  <div class="mobile-center" style="display: flex;">
+    <a href="" class="hover-grow">
+      <img src="/res/icons/dataset-icon.svg" class="mobile-3quarter" style="width: 128px; margin-bottom: 1rem;">
+    </a>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;</div>
+    <div class="mobile-center">
+      <p>The necessary tech for Personalized Intelligences is coming over the horizon... <span class="high" data-end="?">are you building your dataset</span></p>
+      <a href=""><div class="btn" style="width: 128px;">read</div></a>
+    </div>  
+  </div>
+
+  <!-- <div class="mobile-center">this is a useful class</div> -->
+  <div style="margin: 16em;"></div>
+
+  <div class="row">
+    <div class="tile">
+      <a href="/apps/form">
+        <div class="tileimg hover-grow" style="background-image: url(/res/icons/calendar-icon.svg)"></div>
       </a>
-      <div class="mobile-center">
-        <h2>Pseudo code</h2>
-        <p>An approachable and portable notation for systems.</p>
-        <a href="/notebook/?page=1"><div class="btn" style="margin: 1rem; width: 128px;">jump to page</div></a>
-      </div>
+      <h2>Schedule<br><sub>[ setup a time w/me ]</sub></h2>
+      <!-- <a href="/apps/form"><div class="btn" style="width: 128px;">schedule</div></a> -->
     </div>
   </div>
 
-  <div style="margin: 26em;"></div>
+  <div style="margin: 16em;"></div>
 	
 	<div id="footer"></div>
 </body>
