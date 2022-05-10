@@ -1,6 +1,5 @@
 TODO
-  connect weekly.js to loop(->circuit) 
-  ^^^^^^^just this for today^^^^^^^^
+  loop(->circuit) ? *circuit is the larger structure?
   feat. page *easy to link to
 
 
@@ -29,11 +28,9 @@ outline the steps:
   and cache busting is a hair pulling process
 
 policy:
-verify within 24hrs  !!remind myself in the form email lol
-add them as a contact!!remind myself in the form email lol
-reminder the day before  !! remind myself with loop *circuit
+verify within 24hrs     !!remind myself in the form email
+add them as a contact   !!remind myself in the form email
+reminder the morning of !!remind myself with loop *circuit
 
 because they are not going back to check the page, cache busting is a low priority, as new visitors looking to sign up will have the fresh stuff
 so no issue there!
-thank god!
-this is the solution we need!
