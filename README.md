@@ -1,6 +1,7 @@
 TODO
-  connect to loop *circuit
-  feat. page
+  connect weekly.js to loop(->circuit) 
+  ^^^^^^^just this for today^^^^^^^^
+  feat. page *easy to link to
 
 
 

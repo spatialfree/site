@@ -3,6 +3,7 @@
   <link rel="stylesheet" href="/style.css?v10">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="/include/includer.js?v10"></script>
+  <script src="/weekly.js"></script>
 </head>
 
 <body style="display: flex; flex-flow: column; justify-content: center; align-items: center;">
@@ -20,6 +21,7 @@
   </div>
   <div>ve
     <input type="text" onfocusin="set(this)" onfocusout="store(this, 2)" autocomplete="off">
+    <div id="clients" class="row">today's clients == null</div>
   </div>
   
   <br>
@@ -47,9 +49,24 @@
 <script>
   $(document).ready(function() {
     $inputs = $('input');
-    for (var i = 0; i < $inputs.length; i++) {
+    for (let i = 0; i < $inputs.length; i++) {
       $inputs[i].value = localStorage.getItem(i)
     }
+
+    const d = new Date()
+    let day = d.getDay()
+    let html = ``
+    for (let i = 0; i < clients.length; i++) {
+      let client = clients[i]
+      for (let j = 0; j < client.times.length; j++) {
+        if (client.times[j].day == day) {
+          console.log(client)
+          // name
+          html += `<sub>${client.name}:${client.times[j].hour}</sub>`
+        }
+      }
+    }
+    $('#clients').html(html)
   })
 
   function set(el) {
