@@ -23,13 +23,13 @@ const clients = [
   {
     name: 'jacob',
     times: [
-      { day: 6, hour: 4 }
+      { day: 6, hour: 4 },
+      { day: 6, hour: 5 }, 
     ]
   },
   {
     name: 'bryan',
     times: [
-      { day: 6, hour: 5 }, 
       { day: 6, hour: 6 }
     ]
   },
