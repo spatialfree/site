@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="/style.css?v6">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-  <script src="/include/includer.js?v6"></script>
+  <script src="/include/includer.js?v7"></script>
   <script src="/weekly.js?v6"></script>
 </head>
 
@@ -53,11 +53,22 @@
   <br><br>
   <div id="footer"></div>
 </body>
+</html>
 
 <script>
   $(document).ready(function () {
     calendar()
   })
+  
+  // $(window).load(function () {
+  //   $('#g-recaptcha-response').attr('required', true)
+  // })
+  window.onload = function () {
+    var el = document.getElementById('g-recaptcha-response');
+    if (el) {
+      el.setAttribute('required', 'required');
+    }
+  }
 
   function calendar() {
     const d = new Date()
@@ -90,4 +101,12 @@
   }
 </script>
 
-</html>
+<style>
+  #g-recaptcha-response {
+    display: block !important;
+    position: absolute;
+    margin: -50px 0 0 0 !important;
+    z-index: -999999;
+    opacity: 0;
+  }
+</style>

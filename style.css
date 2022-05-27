@@ -143,6 +143,9 @@ input, select, textarea {
 	padding: 0.5rem;
   max-width: 100%;
 }
+input:disabled {
+  color: var(--dark);
+}
 .check {
   display: block;
   position: relative;
