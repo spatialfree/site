@@ -33,7 +33,13 @@ const clients = [
       { day: 6, hour: 6 }
     ]
   },
+  {
+    name: 'niko',
+    times: [
+      { day: 4, hour: 5 }
+    ]
+  }
 ]
 
 // prospective clients
-// niko, mariah, nova, dallin, miranda, sanjit, aidan
+// mariah, nova, dallin, miranda, sanjit, aidan
