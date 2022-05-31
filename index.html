@@ -20,7 +20,7 @@
     <img src="https://hitwebcounter.com/counter/counter.php?page=7981243&style=0007&nbdigits=8&type=page&initCount=0" />
   </div>
   <br><br>
-  <img src="/res/float-pen-letters.png" width="33%" style="margin: 0 auto; display: block;">
+  <img src="/res/float-pen-letters.svg" width="33%" style="margin: 0 auto; display: block;">
   <br><br>
   <h1 class="mobile-center" style="margin-bottom: 0;">Ethan Merchant</h1>
   <h2 class="mobile-center">@spatialfree</h2>
@@ -28,13 +28,7 @@
   <p class="mobile-center">Third generation software developer and tech optimist. This site is a central hub for all my work, ideas, and services</p>
 
   <pre style="margin-bottom: 0; border-radius: 2px 2px 0 0;">
-<div style="background-image: url(/res/cube.gif);
-  width: 48px;
-  height: 48px;
-  background-size: 320px;
-  background-position: center;
-  mix-blend-mode: screen;
-  float: left;"></div>  Oriels<br><span style="color: var(--gray);">  v0.0.103<br>  &#169;2018-22 dofdev</span>
+<span style="color: var(--accent);"> <span style="font-family: Middle Ages Deco; font-size: 48px;">O</span> riels</span><br><span style="color: var(--gray);">v0.0.103<br>&#169;2018-22 dofdev</span>
 
 <span id='commits'></span>
 </pre>
@@ -127,7 +121,7 @@
   <script>
     $(document).ready(function () {
       $('.project-vid').each(function () {
-        $(this).attr('src', '/res/videos/loading.mp4')
+        $(this).attr('poster', '/res/loading.gif')
       })
       
       $(window).scroll(function () { 
@@ -135,7 +129,7 @@
         let scrollPos = $(window).scrollTop() + (window.innerHeight / 2)
         $('#scroller').css('top', scrollPos + 'px')
         $('.project-vid').each(function () {
-          if ($(this).attr('src') != '/res/videos/loading.mp4') {
+          if ($(this).attr('src') != undefined) {
             $(this).trigger('pause')
           }
 
@@ -144,16 +138,11 @@
           if (scrollPos > $(this).offset().top && scrollPos < $(this).offset().top + $(this).height()) {
             $(this).next().css('box-shadow', 'inset 0px 0px 0px 4px #ccc')
             // console.log($(this).attr('src'))
-            if ($(this).attr('src') == '/res/videos/loading.mp4') {
+            if ($(this).attr('src') == undefined) {
               $(this).attr('src', '/res/videos/' + $(this).attr('data-src')) // + '?v' + Math.random()
-              $(this).on('loadeddata', function() {
-                var duration = $(this).prop('duration')
-                var t = Math.random() * duration
-                $(this).prop('currentTime', t)
-              })
             }
             
-            if ($(this).attr('src') != '/res/videos/loading.mp4') {
+            if ($(this).attr('src') != undefined) {
               $(this).trigger('play')
             }
           }
