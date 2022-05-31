@@ -87,9 +87,7 @@
   </div>
   <a href="https://www.newgrounds.com/portal/view/773241" target="blank">
     <div class="project">
-      <video autoplay muted loop class="project-vid">
-        <source src="/res/videos/empty-cave.mp4" type="video/mp4">
-      </video>
+      <video autoplay muted loop class="project-vid" data-src="empty-cave.mp4?v14"></video>
       <div class="project-txt">empty cave</div>
       <div class="project-number">#048</div>
       <div class="project-power">the hero's journey <span class="high" data-end="y">told through gamepla</span></div>
@@ -104,9 +102,7 @@
   </div>
   <a href="https://dofdev.org/snakeinabox/" target="blank">
     <div class="project">
-      <video autoplay muted loop class="project-vid">
-        <source src="/res/videos/snakeinabox.mp4?v14" type="video/mp4">
-      </video>
+      <video autoplay muted loop class="project-vid" data-src="snakeinabox.mp4?v14"></video>
       <div class="project-txt">snake in a box</div>
       <div class="project-number">#011</div>
       <div class="project-power">classic snake <span class="high" data-end="y">realized spatiall</span> from the ground up</div>
@@ -121,35 +117,51 @@
   </div>
   <a href="https://github.com/dofdev/oriels" target="blank">
     <div class="project">
-      <video autoplay muted loop class="project-vid">
-        <source src="/res/videos/raw-oriel-2x-RIFE-RIFE3.1-60fps.mp4" type="video/mp4">
-      </video>
+      <video autoplay muted loop class="project-vid" data-src="raw-oriel-2x-RIFE-RIFE3.1-60fps.mp4?v14"></video>
       <div class="project-txt">oriels</div>
       <div class="project-number">#001</div>
       <div class="project-power">a space for developing <span class="high" data-end="s">dof</span></div>
     </div>
   </a>
 
-  <!-- <div class="row row2column">
-    <div class="tile">
-      <a href="https://scratch.mit.edu/users/ethanwm/">
-        <div class="tileimg hover-grow" style="background-image: url(/res/icons/scratch-icon.svg)"></div>
-      </a>
-      <h2>Scratch<br><sub>[ 2008 ]</sub></h2>
-    </div>
-    <div class="tile">
-      <a href="https://spatialfree.itch.io/">
-        <div class="tileimg hover-grow" style="background-image: url(/res/icons/unity-icon.svg)"></div>
-      </a>
-      <h2>Unity<br><sub>[ 2016 ]</sub></h2>
-    </div>
-    <div class="tile">
-      <a href="https://stereokit.net/">
-        <div class="tileimg hover-grow" style="background-image: url(/res/icons/stereokit-icon.svg)"></div>
-      </a>
-      <h2>StereoKit<br><sub>[ 2022 ]</sub></h2>
-    </div>
-  </div> -->
+  <script>
+    $(document).ready(function () {
+      $('.project-vid').each(function () {
+        $(this).attr('src', '/res/videos/loading.mp4')
+      })
+      
+      $(window).scroll(function () { 
+        // viewport height
+        let scrollPos = $(window).scrollTop() + (window.innerHeight / 2)
+        $('#scroller').css('top', scrollPos + 'px')
+        $('.project-vid').each(function () {
+          if ($(this).attr('src') != '/res/videos/loading.mp4') {
+            $(this).trigger('pause')
+          }
+
+          $(this).next().css('box-shadow', 'inset 0px 0px 0px 4px #cccccc00')
+          
+          if (scrollPos > $(this).offset().top && scrollPos < $(this).offset().top + $(this).height()) {
+            $(this).next().css('box-shadow', 'inset 0px 0px 0px 4px #ccc')
+            // console.log($(this).attr('src'))
+            if ($(this).attr('src') == '/res/videos/loading.mp4') {
+              $(this).attr('src', '/res/videos/' + $(this).attr('data-src')) // + '?v' + Math.random()
+              $(this).on('loadeddata', function() {
+                var duration = $(this).prop('duration')
+                var t = Math.random() * duration
+                $(this).prop('currentTime', t)
+              })
+            }
+            
+            if ($(this).attr('src') != '/res/videos/loading.mp4') {
+              $(this).trigger('play')
+            }
+          }
+        })
+      })
+    })
+  </script>
+
   <br><br>
 
   <div class="mobile-center">
