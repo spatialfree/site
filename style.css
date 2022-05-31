@@ -78,6 +78,7 @@ pre {
   position: relative;
   animation: flicker 1.6s infinite;
   box-shadow: 2.7928974010788217px 0 1px var(--colora), -2.7928974010788217px 0 1px var(--accaent), 0 0 3px;
+  overflow: hidden;
 }
 @keyframes flicker {
   0% { text-shadow: 0.4389924193300864px 0 1px var(--colora), -0.4389924193300864px 0 1px var(--accenta), 0 0 3px; }
@@ -194,6 +195,17 @@ textarea {
   height: 64px;
   mix-blend-mode: screen;
   /* margin: 1rem; */
+}
+.yt {
+  display: flex;
+  height: 200px; 
+  background: url(/res/maxresdefault.webp) center; 
+  background-size: 800px;
+  transition: 0.25s ease-in-out;
+}
+.yt:hover{
+  background-size: 840px;
+  transition: 0.25s ease-in-out;
 }
 .vid {
 	position: relative;
