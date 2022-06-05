@@ -1,0 +1,55 @@
+<html>
+
+<head>
+  <title>3svg</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <h1>3svg</h1>
+  <div id="stage"></div>
+</body>
+
+</html>
+
+<script>
+  var pos = 0
+  
+  // press and hold and pos -= 400 every second
+  // $('#stage').css('background-position-x', pos + 'px')
+
+  $(document).ready(function() {
+    // add event listener on stage
+    $('#stage').on('mousedown', function() {
+      slideFwd()
+      // set interval to move stage
+      var interval = setInterval(function() {
+        slideFwd()
+      }, 200)
+      // add event listener on mouseup
+      $('#stage').on('mouseup', function() {
+        // clear interval
+        clearInterval(interval)
+      })
+    })
+  })
+
+  function slideFwd() {
+    pos -= 400
+    $('#stage').css('background-position-x', pos + 'px')
+  }
+  
+</script>
+
+<style>
+  body {
+    background: #333;
+  }
+  #stage {
+    background: url(test.svg) repeat center center;
+    background-size: cover;
+    width: 400px;
+    height: 256px;
+    background-position-x: 0px;
+  }
+</style>

@@ -1,0 +1,45 @@
+<html>
+
+<head>
+  <title>vid</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <video controls onclick="this.controls = true"></video>
+</body>
+
+<script>
+  $(document).ready(function() {
+    let vid = $('video')
+    let queryString = window.location.search
+    let urlParams = new URLSearchParams(queryString)
+    
+    console.log(parseInt(Math.random() * 100))
+    let res = urlParams.get('res')
+    vid.attr('src', '/res/videos/' + res + '?v' + parseInt(Math.random() * 100))
+    vid.on('ended', function () {
+      this.play()
+      this.controls = false
+    })
+  })
+
+</script>
+
+<style>
+  body {
+    background: #808080;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  video {
+    width: auto;
+    height: auto;
+    object-fit: cover;
+  }
+</style>
+
+</html>
+

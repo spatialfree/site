@@ -30,17 +30,34 @@
     <div style="display: flex; flex-direction: column; align-items: center;">
       <div class="timestamp">yyyy/mm/dd</div>
       <br>
+      <h1 class="fancy">Template</h1>
+      <pre>direction = (to - from).normalized</pre>
+      <br><br>
+      
+      <h2>to</h2>
+      <p>future ideal</p>
+      
+      <h2>-</h2>
+      <p>working model</p>
+      
+      <h2>from</h2>
+      <p>current issue</p>
+      
+      <h2>normalized</h2>
+      <p>maximal next step</p>
+      
+      <br><br>
       <img src="/res/icons/dataset-icon.svg" width="128px">
-      <h1>Dataset</h1>
-      <p style="max-width: 480px;">The necessary tech for Personalized Intelligences is coming over the horizon... <span class="high" data-end="?">are you building your dataset</span></p>
-      <div style="font-family: serif; text-align: center; font-size: 36px; margin: 1em auto; color: #666">&conint;</div>
+
+
+      <!-- <div style="font-family: serif; text-align: center; font-size: 36px; margin: 1em auto; color: #666">&conint;</div> -->
     </div>
 
     <!-- ------------------------------------------------------------- -->
 
     <div>
       <div class="timestamp">2021/08/22</div>
-      <h1>Pseudo code</h1>
+      <h1 class="fancy">Pseudo code</h1>
       <p>An approachable and portable notation for systems.</p>
       <br>
       <p>As you remove code's language and context specific formalities it becomes pseudo code. A dense, powerful, and accessible vessel for process logic:</p>
@@ -68,7 +85,7 @@ Show()
 
     <div>
       <div class="timestamp">2021/10/10</div>
-      <h1>Division</h1>
+      <h1 class="fancy">Division</h1>
       <p>Issues <b>fester</b> in democratic countries until they boil over and swing out the other direction. By giving our secondary affairs a non zero chance in the sun, we <b>temper</b> their engagement and account for them more readily.</p>
       <br>
       <h2>working model</h2>
@@ -244,7 +261,7 @@ foreach option in options
 
     <div>
       <div class="timestamp">2021/12/11</div>
-      <h1>Phree will</h1>
+      <h1 class="fancy">Phree will</h1>
       <p>A physics based model for the metaphysical.</p>
       <br>
       <p>Acknowledging the unique attributes and experiences of the self to consciously inform your actions. Leveraging eccentricities and accounting for shortcomings. Resulting in a more active role in spent time.</p>
@@ -269,10 +286,31 @@ foreach option in options
     
     <div>
       <div class="timestamp">2022/04/21</div>
-      <h1>L ipid layer</h1>
+      <h1 class="fancy">L ipid layer</h1>
       <p>This environmental encapsulation and regulation layer responsible for sustaining life seems to crop up at some interesting scales:</p>
       <pre>petroleum = hydrocarbon = lipid</pre>
       <img src="/res/lipid-layer.png" width="100%">
+      <br>
+    </div>
+
+    <!-- ------------------------------------------------------------- -->
+    
+    <div>
+      <div class="timestamp">2022/06/01</div>
+      <h1 class="fancy">P roductivity</h1>
+      <p>Remote Work & Value Communication</p>
+      <p>Productivity Posturing is the blindspot of any efficiency oversight. With self review methods trending towards tedium
+      and delusion.
+      The best working model I've come across that addresses these shortcomings, is as follows. Record the worksite (computer
+      screen, physical location, etc.) at a low framerate. To then playback at ~10x for the worker to narrate at the end of a
+      time block. The resulting compiled video can then be reviewed, logged, and distributed as agreed upon.
+      Facing head on the raw playback of time spent It's harder to make excuses for wasted time. The higher timescale exposes
+      patterns of productivity posturing to an almost comical level. With the on the spot narration system helping the entire
+      review process not get dragged down in editorial.
+      This process can be made more palatable by making it voluntary and passing on some of the efficiency boon to the worker.
+      With regular cuts/breaks to make space for expected downtime and leaner recordings.
+      I've found this model to be critical in communicating the value I'm providing clients when working remotely.
+      Particularly when encountering segments where milestones are more disparate and subtle.</p>
       <br>
     </div>
 
@@ -306,11 +344,11 @@ foreach option in options
     font-family: "Vacer", serif;
     letter-spacing: 1px;
   } */
-  h1::first-letter {
+  /* h1::first-letter {
     font-size: 112px;
     letter-spacing: 14px;
     font-family: "Middle Ages Deco", serif;
-  }
+  } */
   #controls {
     display: flex;
     justify-content: center;
@@ -349,28 +387,28 @@ foreach option in options
 
 <script>
   $(document).ready(function() {
-    let queryString = window.location.search;
-    let urlParams = new URLSearchParams(queryString);
-    let p = parseInt(urlParams.get('page'));
+    let queryString = window.location.search
+    let urlParams = new URLSearchParams(queryString)
+    let p = parseInt(urlParams.get('page'))
     // if NaN, set to 0
     if (isNaN(p)) {
-      p = 0;
+      p = 0
     }
 
-    let $pages = $('#pages').children();
-    $('#page-next').attr('href', '?page=' + (p + 1));
-    if (p + 1 == $pages.length) { $('#page-next').css('visibility', 'hidden'); }
-    $('#page-back').attr('href', '?page=' + (p - 1));
+    let $pages = $('#pages').children()
+    $('#page-next').attr('href', '?page=' + (p + 1))
+    if (p + 1 == $pages.length) { $('#page-next').css('visibility', 'hidden') }
+    $('#page-back').attr('href', '?page=' + (p - 1))
     if (p - 1 < 0) { $('#page-back').css('visibility', 'hidden') }
 
     for (let i = 0; i < $pages.length; i++) {
       if (i == p) {
-        // $pages.eq(i).css('display', 'block');
+        // $pages.eq(i).css('display', 'block')
       } else {
-        $pages.eq(i).css('display', 'none');
+        $pages.eq(i).css('display', 'none')
       }
     }
     $('#page-number').html(`&nbsp;&nbsp;${p} / ${$pages.length - 1}&nbsp;&nbsp;`)
-  });
+  })
 </script>
 </html>

@@ -4,8 +4,8 @@
   src: url("/res/MiddleAgesDeco.ttf");
 }
 :root {
-	--color: #1c91b8; --colora: #1a9fcc16;
-  --accent: #cf4a4a; --accenta: #f34a4a32;
+	--color: #1c91b8; --colora: #1a9fcc0e;
+  --accent: #cf4a4a; --accenta: #f34a4a15;
   --black: rgb(16, 16, 16);
   --dark: rgb(64, 64, 64);
   --gray: rgb(128, 128, 128);
@@ -71,15 +71,18 @@ sub {
 }
 pre {
   padding: 16px;
-  background-color: var(--black);
-  color: var(--color);
+  /* background: radial-gradient(var(--black), var(--dark)); */
+  background: var(--black);
+  color: var(--white);
   font-family: "IBM", monospace;
   font-size: 16px;
   position: relative;
-  animation: flicker 1.6s infinite;
-  box-shadow: 2.7928974010788217px 0 1px var(--colora), -2.7928974010788217px 0 1px var(--accaent), 0 0 3px;
+  /* animation: flicker 3s infinite; */
+  /* box-shadow: inset 0 0 12px var(--gray); */
+  /* border: 1px solid var(--dark); */
   overflow: hidden;
 }
+/*
 @keyframes flicker {
   0% { text-shadow: 0.4389924193300864px 0 1px var(--colora), -0.4389924193300864px 0 1px var(--accenta), 0 0 3px; }
   5% { text-shadow: 2.7928974010788217px 0 1px var(--colora), -2.7928974010788217px 0 1px var(--accenta), 0 0 3px; }
@@ -111,11 +114,12 @@ pre::before {
   left: 0;
   bottom: 0;
   right: 0;
-  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.05) 50%), linear-gradient(91deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
   z-index: 2;
   background-size: 100% 2px, 3px 100%;
   pointer-events: none;
-}
+} 
+*/
 a {
 	color: var(--white);
   /* var(--color); */
@@ -170,7 +174,7 @@ input:disabled {
   background-color: var(--black);
   border: 1px solid var(--white);
   border-radius: 50%;
-  /* transition: all 0.2s ease-in-out; */
+  /* transition: all 0.2s; */
 }
 .check:hover input ~ .checkmark {
   background-color: #333;
@@ -201,11 +205,11 @@ textarea {
   height: 200px; 
   background: url(/res/maxresdefault.webp) center; 
   background-size: 800px;
-  transition: 0.25s ease-in-out;
+  transition: 0.25s;
 }
 .yt:hover{
   background-size: 840px;
-  transition: 0.25s ease-in-out;
+  transition: 0.25s;
 }
 .vid {
 	position: relative;
@@ -269,11 +273,15 @@ textarea {
   width: 48px; 
   background-size: cover; 
 }
+.engine sub {
+  color: var(--black);
+}
 .hover-grow {
-  transition: 0.1s ease-out;
+  transition: 0.5s;
 }
 .hover-grow:hover {
   transform: scale(1.1);
+  transition: 0.1s;
 }
 .btn {
 	margin: 1rem auto;
@@ -291,9 +299,11 @@ textarea {
   color: var(--black);
 }
 .btn:hover {
-  transition: 0.1s ease-out;
+  transition: 0.1s;
 	/* border-color: var(--white); */
   color: var(--white);
+  box-shadow: 0 0 1rem 0rem rgba(0, 0, 0, 0.15);
+  transition: 0.1s;
 }
 .hook {
 	text-align: center;
@@ -441,6 +451,11 @@ textarea {
   background-position: center;
   margin-bottom: 6rem;
   position: relative;
+  transition: 0.5s;
+}
+.project:hover {
+  box-shadow: 0 0 1rem 0rem rgba(0, 0, 0, 0.5);
+  transition: 0.1s;
 }
 .project-vid {
   width: 100%;
@@ -467,13 +482,14 @@ textarea {
   pointer-events: none;
 }
 .project-number {
-  float: right;
   background-color: var(--black);
   color: var(--gray);
   width: fit-content;
   padding: 0.25rem 0.5rem;
   font-size: smaller;
   font-family: monospace;
+  margin-top: -1.4rem;
+  margin-left: auto;
 }
 .project-power {
   text-align: left;
