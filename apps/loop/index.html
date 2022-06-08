@@ -21,7 +21,7 @@
   </div>
   <div>ve
     <input type="text" onfocusin="set(this)" onfocusout="store(this, 2)" autocomplete="off">
-    <div id="clients" class="row">today's clients == null</div>
+    <div id="clients">today's clients == null</div>
   </div>
   
   <br>
@@ -55,17 +55,34 @@
 
     const d = new Date()
     let day = d.getDay()
-    let html = ``
+    let html = `<br>today's clients:<br>`
     for (let i = 0; i < clients.length; i++) {
       let client = clients[i]
       for (let j = 0; j < client.times.length; j++) {
         if (client.times[j].day == day) {
           console.log(client)
           // name
-          html += `<sub>${client.name}:${client.times[j].hour}</sub>`
+          html += `<sub>${client.name}:${client.times[j].hour}</sub><br>`
         }
       }
     }
+    
+    html += `<br>followthrough:<br>`
+    let yesterday = day - 1
+    if (yesterday < 0) {
+      yesterday = 6
+    }
+    for (let i = 0; i < clients.length; i++) {
+      let client = clients[i]
+      for (let j = 0; j < client.times.length; j++) {
+        if (client.times[j].day == yesterday) {
+          console.log(client)
+          // name
+          html += `<sub>${client.name}:${client.times[j].hour}</sub><br>`
+        }
+      }
+    }
+
     $('#clients').html(html)
   })
 
