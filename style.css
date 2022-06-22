@@ -446,7 +446,7 @@ textarea {
 }
 .project {
   width: 100%;
-  height: 200px;
+  height: 300px;
   background-size: cover;
   background-position: center;
   margin-bottom: 6rem;
@@ -459,11 +459,12 @@ textarea {
 }
 .project-vid {
   width: 100%;
-  height: 200px;
+  height: 300px;
   object-fit: cover;
   right: 0;
   bottom: 0;
   /* cursor: pointer; */
+  transition: 0.5s;
 }
 .project-txt {
   /* box-shadow: inset 0px 0px 0px 6px #fff; */
@@ -472,7 +473,7 @@ textarea {
   top: 0;
   left: 0;
   right: 0;
-  line-height: 150px;
+  line-height: 250px;
   text-align: center;
   font-size: 48px;
   mix-blend-mode: difference;
@@ -569,8 +570,15 @@ textarea {
   .btn {
     margin: 1rem auto;
   }
+  .project {
+    height: 200px;
+  }
+  .project-vid {
+    height: 200px;
+  }
   .project-txt {
     font-size: 32px;
+    line-height: 150px;
   }
   .profile-pic {
     /* width: 128px;
